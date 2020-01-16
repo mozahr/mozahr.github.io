@@ -2,82 +2,223 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>sarah's Web</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/fullpage.css">
-
-
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/fullpage.css" />
 </head>
 
 <body>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
-
-
-
     <div id="fullpage">
-
-
         <!-- section 1 -->
 
-
         <div class="section s1" data-anchor="sect1" id="section0"
-            style="background-image: url(&quot;assets/img/Mainbackground.jpg&quot;);background-repeat: no-repeat;background-size: cover;">
+            style='background-image: url("assets/img/Mainbackground.jpg");background-repeat: no-repeat;background-size: cover;'>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
                             <h1 class="text-center">Choose Your Death</h1>
-                            <button class="btn btn-info" type="button" onclick="startQuiz()">Take the Quizz</button>
+                            <button class="btn btn-info" type="button" onclick="typeScript.startQuiz()">
+                                Take the Quizz
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- section 2 -->
 
         <div class="section s2" id="section1" data-anchor="sect2">
             <div class="container" data-aos="fade-up">
-                <div id="t">Hello world. Let's wait <del>hundred</del> two seconds ..<ins>2</ins><br /><br /><strong>Thanks for waiting.</strong> Now, We will start the<del> Game </del>'Quizz' 1st question ... 
-                    <div><label class="text-uppercase text-info"><mark>1. How do you usualy spend your time</mark></label>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Discovering Nature</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3">Playing Video Games</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Reading</label></div>
+                <div id="t">
+                    Hello world. Let's wait <del>hundred</del> two seconds ..<ins>2</ins><br /><br /><strong>Thanks for
+                        waiting.</strong> Now, We will start
+                    the<del> Game </del>'Quiz' 1st question ...
+                    <span onclick="typeScript.load.Question1()">continue</span>
+                    <div id="questionsContainer"></div>
+                </div>
+            </div>
+
+
+
+             <video autoplay muted loop id="previewVideo" style="display: none;">
+                <source src="assets/videos/Nature.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video> 
+
+            <!-- Question To Be Loaded -->
+            <div id="q1" style="display: none;">
+                <label class="text-uppercase text-info">1. How do you usualy spend your time</label>
+                <div class="form-check">
+                    <label class="form-check-label q1">Discovering Nature</label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label q1">Playing Video Games</label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label q1">Reading</label>
+                </div>
+            </div>
+            <div id="q2" style="display: none;">
+                <label class="text-uppercase text-info q2">2. How Often Do You Feel Lonely</label>
+                <div class="form-check">
+                    <label class="form-check-label q2">Always</label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label q2">Every Now And Then</label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label q2">Never</label>
+                </div>
+            </div>
+            <div id="q3" style="display: none;">
+                <label class="text-uppercase text-info">3. How Many Times Have You Been HeartBroken</label>
+                <div class="form-check">
+                    <label class="form-check-label q3">Never</label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label q3">0 - 3</label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label q3">4 - 6</label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label q3">Prefer Not To Say</label>
+                </div>
+            </div>
+            <div id="q4" style="display: none;">
+                <label class="text-uppercase text-info">4. Choose your favourite out of these 3 movies</label>
+                <div class="row">
+                    <div class="col text-center q4" data-val="intoTheWild">
+                        <img src="assets/img/220px-Into_the_Wild_(2007_film_poster).png" height="200" />
+                    </div>
+                    <div class="col text-center q4" data-val="Thenotebook">
+                        <img src="assets/img/51J02DT6ULL.jpg" height="200" />
+                    </div>
+                    <div class="col text-center q4" data-val="Matrix">
+                        <img src="assets/img/download.jpg" height="200" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    </div>
-
-
-
-    <script src="assets/js/t.min.js">  </script>
+    <script src="assets/js/t.min.js"></script>
     <script src="assets/js/fullpage.min.js"></script>
     <script>
-
         new fullpage("#fullpage", {
             autoScrolling: true,
-            anchors: ['sect1', 'sect2']
-        })
-        function startQuiz() {
-            window.location.href = '#sect2'
-            $('#t').t({
-                delay: 2,
-                beep: false,
+            anchors: ["sect1", "sect2"]
+        });
+
+        var answers = [];
+
+        var typeScript = {
+            startQuiz: function () {
+                window.location.href = "#sect2";
+                $("#t").t({
+                    delay: 2,
+                    beep: false
+                });
+            },
+            load: {
+                Question1: function () {
+                    $("#t").t($("#q1").html());
+                    $(".q1").click(function () {
+                        alert(this.text)
+                    });
+                },
+                Question2: function () {
+                    $("#t").t($("#q2").html());
+                },
+                Question3: function () {
+                    $("#t").t($("#q3").html());
+                },
+                Question4: function () {
+                    $("#t").t($("#q4").html());
+                }
+            }
+        };
+
+        $(document).ready(function () {
+            // set the hover events
+          var video = $("#previewVideo");
+            $(document).on({
+                mouseenter: function () {
+                    var hovered = $(this).html();
+                    if(hovered === 'Discovering Nature')
+                    {
+                            video.show();
+                    }
+                },
+                mouseleave: function () {
+                    video.hide();
+                }
+            }, ".q1");
+            $(document).on({
+                mouseenter: function () {
+                    var hovered = $(this).html();
+                alert(hovered);
+                },
+                mouseleave: function () {
+                  alert(leave);
+                }
+            }, ".q2");
+            $(document).on({
+                mouseenter: function () {
+                    var hovered = $(this).html();
+                alert(hovered);
+                },
+                mouseleave: function () {
+                  alert(leave);
+                }
+            }, ".q3");
+            $(document).on({
+                mouseenter: function () {
+                    var hovered = $(this).attr("data-val");
+                alert(hovered);
+                },
+                mouseleave: function () {
+                  alert(leave);
+                }
+            }, ".q4");
+        
+
+
+            // set the click events
+            $(document).on("click", ".q1", function () {
+                answers[0] = $(this).html();
+                typeScript.load.Question2();
+            });
+            $(document).on("click", ".q2", function () {
+
+                answers[1] = $(this).html();
+                typeScript.load.Question3();
+
+            });
+            $(document).on("click", ".q3", function () {
+
+
+                answers[2] = $(this).html();
+                typeScript.load.Question4();
+            });
+            $(document).on("click", ".q4", function () {
+
+
+                alert($(this).attr("data-val"))
+                answers[3] = $(this).attr("data-val")
+                alert(answers)
 
 
             });
-        }
-
-
+        });
     </script>
 </body>
 
