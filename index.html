@@ -263,7 +263,7 @@
 
             var utterance1 = new SpeechSynthesisUtterance("Hello world. Let's wait two seconds");
             var utterance2 = new SpeechSynthesisUtterance('Thanks for waiting. Now, We will start the Game, i mean the Quiz . Click continue to start');
-
+            synth.cancel();
             synth.speak(utterance1);
             synth.speak(utterance2);
 
