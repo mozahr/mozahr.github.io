@@ -38,9 +38,7 @@
         <div class="section s2 text-center" id="section1" data-anchor="sect2">
             <div class="container">
                 <div id="t">
-                    Hello world. Let's wait <del>hundred</del> two seconds ..<ins>2</ins><br /><br /><strong>Thanks for
-                        waiting.</strong> Now, We will start
-                    the<del> Game </del>'Quiz' 1st question ...
+                    Hello world. Let's wait <del>hundred</del> two seconds ..<ins>2</ins><br /><br /><strong>Thanks for waiting.</strong> Now, We will start the<del> Game </del>'Quiz' 1st question ...
                     <span onclick="typeScript.load.Question1()">continue</span>
                 </div>
                 <div id="questionsContainer" style="height: 100vh;display: none;"></div>
@@ -99,7 +97,7 @@
             <div id="q2" style="display: none;">
                 <div  class=" questHeader d-flex justify-content-center align-items-center">
                 <label class="text-uppercase">
-                    <h3>2. How Often Do You Feel Lonely</h3>
+                    <h3>How Often Do You Feel Lonely</h3>
                 </label>
                 </div>
 
@@ -150,7 +148,7 @@
 
                 <div  class=" questHeader d-flex justify-content-center align-items-center">
                 <label class="text-uppercase">
-                    <h3>3. How Many Times Have You Been HeartBroken</h3>
+                    <h3>How Many Times Have You Been HeartBroken</h3>
                 </label>
                 </div>
                 <div class='row questBody'>
@@ -205,7 +203,7 @@
             <div id="q4" style="display: none;">
                 <div  class=" questHeader d-flex justify-content-center align-items-center">
                 <label class="text-uppercase">
-                    <h3>4. Choose your favourite out of these 3 movies</h3>
+                    <h3>Choose your favourite out of these 3 movies</h3>
                 </label>
                 </div>
                 <div class='row questBody'>
@@ -276,16 +274,25 @@
             load: {
                 Question1: function () {
                     $("#t").html('');
-                    $("#questionsContainer").t($("#q1").html());
+                    $("#questionsContainer").html($("#q1").html()).fadeIn(1000);
+                  
                 },
                 Question2: function () {
-                    $("#questionsContainer").t($("#q2").html());
+                    $("#questionsContainer").fadeOut(1000, function () {
+                        $("#questionsContainer").html($("#q2").html()).fadeIn(1000);
+                    });
                 },
                 Question3: function () {
-                    $("#questionsContainer").t($("#q3").html());
+                    $("#questionsContainer").fadeOut(1000,function() {
+
+                        $("#questionsContainer").html($("#q3").html()).fadeIn(1000);
+                    });
+                   
                 },
                 Question4: function () {
-                    $("#questionsContainer").t($("#q4").html());
+                    $("#questionsContainer").fadeOut(1000,function(){
+                        $("#questionsContainer").html($("#q4").html()).fadeIn(1000);
+                    });
                 }
             }
         };
