@@ -1,5 +1,5 @@
 
-  #previewVideo { 
+  /* #previewVideo { 
     position: fixed;
     top: 150%;
     left: 50%;
@@ -9,4 +9,10 @@
     height: auto;
     z-index: -100;
     transform: translate(-50%, -50%);
-  }
+  } */
+
+  .vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}

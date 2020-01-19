@@ -35,7 +35,7 @@
 
         <!-- section 2 -->
 
-        <div class="section s2" id="section1" data-anchor="sect2">
+        <div class="section s2 text-center" id="section1" data-anchor="sect2">
             <div class="container" data-aos="fade-up">
                 <div id="t">
                     Hello world. Let's wait <del>hundred</del> two seconds ..<ins>2</ins><br /><br /><strong>Thanks for
@@ -48,24 +48,43 @@
 
 
 
-             <video autoplay muted loop id="previewVideo" style="display: none;">
+            <!-- <video autoplay muted loop id="previewVideo" style="display: none;">
                 <source src="assets/videos/Nature.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
-            </video> 
+            </video>  -->
 
             <!-- Question To Be Loaded -->
             <div id="q1" style="display: none;">
+
                 <label class="text-uppercase text-info">1. How do you usualy spend your time</label>
-                <div class="form-check">
-                    <label class="form-check-label q1">Discovering Nature</label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label q1">Playing Video Games</label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label q1">Reading</label>
+
+                <video autoplay muted loop id="previewVideo" style="display: none;">
+                    <source src="assets/videos/Nature.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+
+                <div class='row'>
+                    <div class="col-md-4 vcenter">
+                        <div style="height:12em;">
+                            
+                            <label class="form-check-label q1" style="height: 25px;">Discovering Nature</label>
+                            <video autoplay muted loop id="previewVideo" style="height:100%;width: 100%;">
+                                <source src="assets/videos/Nature.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                           
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-check-label q1">Playing Video Games</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-check-label q1">Reading</label>
+                    </div>
                 </div>
             </div>
+
+
             <div id="q2" style="display: none;">
                 <label class="text-uppercase text-info q2">2. How Often Do You Feel Lonely</label>
                 <div class="form-check">
@@ -78,6 +97,9 @@
                     <label class="form-check-label q2">Never</label>
                 </div>
             </div>
+
+
+
             <div id="q3" style="display: none;">
                 <label class="text-uppercase text-info">3. How Many Times Have You Been HeartBroken</label>
                 <div class="form-check">
@@ -149,13 +171,12 @@
 
         $(document).ready(function () {
             // set the hover events
-          var video = $("#previewVideo");
+            var video = $("#previewVideo");
             $(document).on({
                 mouseenter: function () {
                     var hovered = $(this).html();
-                    if(hovered === 'Discovering Nature')
-                    {
-                            video.show();
+                    if (hovered === 'Discovering Nature') {
+                        video.show();
                     }
                 },
                 mouseleave: function () {
@@ -165,31 +186,31 @@
             $(document).on({
                 mouseenter: function () {
                     var hovered = $(this).html();
-                alert(hovered);
+                    alert(hovered);
                 },
                 mouseleave: function () {
-                  alert(leave);
+                    alert(leave);
                 }
             }, ".q2");
             $(document).on({
                 mouseenter: function () {
                     var hovered = $(this).html();
-                alert(hovered);
+                    alert(hovered);
                 },
                 mouseleave: function () {
-                  alert(leave);
+                    alert(leave);
                 }
             }, ".q3");
             $(document).on({
                 mouseenter: function () {
                     var hovered = $(this).attr("data-val");
-                alert(hovered);
+                    alert(hovered);
                 },
                 mouseleave: function () {
-                  alert(leave);
+                    alert(leave);
                 }
             }, ".q4");
-        
+
 
 
             // set the click events
