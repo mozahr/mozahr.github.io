@@ -36,8 +36,8 @@
         <!-- section 2 -->
 
         <div class="section s2 text-center" id="section1" data-anchor="sect2">
-            <div class="container" data-aos="fade-up">
-                <div id="t">
+            <div class="container-fluid" data-aos="fade-up">
+                <div id="t" style="height: 100%;width: 100%;">
                     Hello world. Let's wait <del>hundred</del> two seconds ..<ins>2</ins><br /><br /><strong>Thanks for
                         waiting.</strong> Now, We will start
                     the<del> Game </del>'Quiz' 1st question ...
@@ -56,25 +56,21 @@
             <!-- Question To Be Loaded -->
             <div id="q1" style="display: none;">
 
-                <label class="text-uppercase text-info">1. How do you usualy spend your time</label>
+                <label class="text-uppercase"><h3> How do you usualy spend your time</h3></label>
 
-                <video autoplay muted loop id="previewVideo" style="display: none;">
-                    <source src="assets/videos/Nature.mp4" type="video/mp4">
-                    Your browser does not support HTML5 video.
-                </video>
+                <div class='row' style="height:80vh;">
 
-                <div class='row'>
                     <div class="col-md-4 vcenter">
-                        <div style="height:12em;">
-                            
+                        <div style="height:25em;">                           
                             <label class="form-check-label q1" style="height: 25px;">Discovering Nature</label>
                             <video autoplay muted loop id="previewVideo" style="height:100%;width: 100%;">
                                 <source src="assets/videos/Nature.mp4" type="video/mp4">
                                 Your browser does not support HTML5 video.
-                            </video>
-                           
+                            </video>                           
                         </div>
                     </div>
+
+
                     <div class="col-md-4">
                         <label class="form-check-label q1">Playing Video Games</label>
                     </div>
