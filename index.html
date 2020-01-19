@@ -13,7 +13,7 @@
 <body>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
+    <audio src="" hidden class="speech"></audio>
     <div id="fullpage">
         <!-- section 1 -->
 
@@ -50,17 +50,17 @@
 
             <!-- Question To Be Loaded -->
             <div id="q1" style="display: none;">
-                <div  class=" questHeader d-flex justify-content-center align-items-center">
+                <div class=" questHeader d-flex justify-content-center align-items-center">
                     <label class="text-uppercase">
                         <h3>How do you usually spend your time</h3>
                     </label>
                 </div>
-                <div class='row questBody' >
+                <div class='row questBody'>
 
                     <div class="col-md-4 ">
                         <div class="q1 d-flex justify-content-center align-items-center questCont" data-val="Nature">
 
-                            <label >
+                            <label>
                                 <h5><strong>Nature</strong></h5>
                             </label>
 
@@ -74,7 +74,7 @@
                             data-val="Playing Video Games">
 
                             <label>
-                                <h5><strong></strong>Playing Video Games</strong></h5>
+                                <h5><strong>Playing Video Games</strong></h5>
                             </label>
 
                         </div>
@@ -85,7 +85,7 @@
 
                         <div class="q1 d-flex justify-content-center align-items-center questCont" data-val="Reading">
                             <label>
-                                <h5><strong></strong>Reading</strong></h5>
+                                <h5><strong>Reading</strong></h5>
                             </label>
 
                         </div>
@@ -95,19 +95,19 @@
 
 
             <div id="q2" style="display: none;">
-                <div  class=" questHeader d-flex justify-content-center align-items-center">
-                <label class="text-uppercase">
-                    <h3>How Often Do You Feel Lonely</h3>
-                </label>
+                <div class=" questHeader d-flex justify-content-center align-items-center">
+                    <label class="text-uppercase">
+                        <h3>How Often Do You Feel Lonely</h3>
+                    </label>
                 </div>
 
-                <div class='row questBody' >
+                <div class='row questBody'>
 
                     <div class="col-md-4">
                         <div class="d-flex justify-content-center align-items-center q2 questCont" data-val="Always">
 
-                            <label >
-                                <h5><strong> Always</strong></h5>
+                            <label>
+                                <h5><strong>Always</strong></h5>
                             </label>
 
                         </div>
@@ -117,7 +117,7 @@
                         <div class="d-flex justify-content-center align-items-center q2 questCont"
                             data-val="Every Now And Then">
 
-                            <label >
+                            <label>
                                 <h5><strong> Every Now And Then</strong></h5>
                             </label>
 
@@ -127,7 +127,7 @@
                     <div class="col-md-4">
                         <div class="d-flex justify-content-center align-items-center q2 questCont" data-val="Never">
 
-                            <label >
+                            <label>
                                 <h5><strong> Never</strong></h5>
                             </label>
 
@@ -146,17 +146,17 @@
             <div id="q3" style="display: none;">
 
 
-                <div  class=" questHeader d-flex justify-content-center align-items-center">
-                <label class="text-uppercase">
-                    <h3>How Many Times Have You Been HeartBroken</h3>
-                </label>
+                <div class=" questHeader d-flex justify-content-center align-items-center">
+                    <label class="text-uppercase">
+                        <h3>How Many Times Have You Been HeartBroken</h3>
+                    </label>
                 </div>
                 <div class='row questBody'>
 
                     <div class="col-md-3">
                         <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="Never">
 
-                            <label >
+                            <label>
                                 <h5><strong> Never</strong></h5>
                             </label>
 
@@ -187,7 +187,7 @@
                         <div class="d-flex justify-content-center align-items-center q3 questCont"
                             data-val="Prefer Not To Say">
 
-                            <label >
+                            <label>
                                 <h5><strong>Prefer Not To Say</strong></h5>
                             </label>
 
@@ -201,10 +201,10 @@
 
 
             <div id="q4" style="display: none;">
-                <div  class=" questHeader d-flex justify-content-center align-items-center">
-                <label class="text-uppercase">
-                    <h3>Choose your favourite out of these 3 movies</h3>
-                </label>
+                <div class=" questHeader d-flex justify-content-center align-items-center">
+                    <label class="text-uppercase">
+                        <h3>Choose your favourite out of these 3 movies</h3>
+                    </label>
                 </div>
                 <div class='row questBody'>
 
@@ -256,26 +256,46 @@
     <script src="assets/js/t.min.js"></script>
     <script src="assets/js/fullpage.min.js"></script>
     <script>
+
+        function ReadText(text) {
+
+            var synth = window.speechSynthesis;
+
+            var utterance1 = new SpeechSynthesisUtterance("Hello world. Let's wait two seconds");
+            var utterance2 = new SpeechSynthesisUtterance('Thanks for waiting. Now, We will start the Game, i mean the Quiz . Click continue to start');
+
+            synth.speak(utterance1);
+            synth.speak(utterance2);
+
+            //synth.pause(); // pauses utterances being spoken
+            //speechSynthesis.speak(new SpeechSynthesisUtterance("Hello, this is your browser speaking."));
+        }
+
+
         new fullpage("#fullpage", {
             autoScrolling: true,
             anchors: ["sect1", "sect2"]
         });
 
         var answers = [];
-
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
         var typeScript = {
             startQuiz: function () {
                 window.location.href = "#sect2";
                 $("#t").t({
-                    delay: 2,
                     beep: false
                 });
+                setTimeout(function (){ReadText("hello world")},1000);
+              
+
             },
             load: {
                 Question1: function () {
                     $("#t").html('');
                     $("#questionsContainer").html($("#q1").html()).fadeIn(1000);
-                  
+
                 },
                 Question2: function () {
                     $("#questionsContainer").fadeOut(1000, function () {
@@ -283,14 +303,14 @@
                     });
                 },
                 Question3: function () {
-                    $("#questionsContainer").fadeOut(1000,function() {
+                    $("#questionsContainer").fadeOut(1000, function () {
 
                         $("#questionsContainer").html($("#q3").html()).fadeIn(1000);
                     });
-                   
+
                 },
                 Question4: function () {
-                    $("#questionsContainer").fadeOut(1000,function(){
+                    $("#questionsContainer").fadeOut(1000, function () {
                         $("#questionsContainer").html($("#q4").html()).fadeIn(1000);
                     });
                 }
