@@ -36,37 +36,34 @@
         <!-- section 2 -->
 
         <div class="section s2 text-center" id="section1" data-anchor="sect2">
-            <div class="container" data-aos="fade-up">
-                <div id="t" style="height: 100%;width: 100%;">
+            <div class="container">
+                <div id="t">
                     Hello world. Let's wait <del>hundred</del> two seconds ..<ins>2</ins><br /><br /><strong>Thanks for
                         waiting.</strong> Now, We will start
                     the<del> Game </del>'Quiz' 1st question ...
                     <span onclick="typeScript.load.Question1()">continue</span>
-                    <div id="questionsContainer"></div>
                 </div>
+                <div id="questionsContainer" style="height: 100vh;display: none;"></div>
             </div>
 
 
 
-            <!-- <video autoplay muted loop id="previewVideo" style="display: none;">
-                <source src="assets/videos/Nature.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>  -->
+
 
             <!-- Question To Be Loaded -->
             <div id="q1" style="display: none;">
+                <div  class=" questHeader d-flex justify-content-center align-items-center">
+                    <label class="text-uppercase">
+                        <h3>How do you usually spend your time</h3>
+                    </label>
+                </div>
+                <div class='row questBody' >
 
-                <label class="text-uppercase">
-                    <h3>How do you usualy spend your time</h3>
-                </label>
+                    <div class="col-md-4 ">
+                        <div class="q1 d-flex justify-content-center align-items-center questCont" data-val="Nature">
 
-                <div class='row' style="height:80vh;">
-
-                    <div class="col-md-4">
-                        <div class="q1 d-flex justify-content-center align-items-center questCont" data-val = "Nature">
-
-                            <label style="height: 25px;">
-                                <h5><strong> Nature</strong></h5>
+                            <label >
+                                <h5><strong>Nature</strong></h5>
                             </label>
 
                         </div>
@@ -75,9 +72,10 @@
                     <div class="col-md-4 ">
 
 
-                        <div class="q1 d-flex justify-content-center align-items-center questCont" data-val = "Playing Video Games">
+                        <div class="q1 d-flex justify-content-center align-items-center questCont"
+                            data-val="Playing Video Games">
 
-                            <label style="height: 25px;">
+                            <label>
                                 <h5><strong></strong>Playing Video Games</strong></h5>
                             </label>
 
@@ -87,8 +85,8 @@
                     <div class="col-md-4">
 
 
-                        <div class="q1 d-flex justify-content-center align-items-center questCont" data-val = "Reading">
-                            <label style="height: 25px;">
+                        <div class="q1 d-flex justify-content-center align-items-center questCont" data-val="Reading">
+                            <label>
                                 <h5><strong></strong>Reading</strong></h5>
                             </label>
 
@@ -99,17 +97,18 @@
 
 
             <div id="q2" style="display: none;">
-
+                <div  class=" questHeader d-flex justify-content-center align-items-center">
                 <label class="text-uppercase">
                     <h3>2. How Often Do You Feel Lonely</h3>
                 </label>
+                </div>
 
-                <div class='row' style="height:80vh;">
+                <div class='row questBody' >
 
                     <div class="col-md-4">
-                        <div class="d-flex justify-content-center align-items-center q2 questCont"  data-val = "Always">
+                        <div class="d-flex justify-content-center align-items-center q2 questCont" data-val="Always">
 
-                            <label style="height: 25px;">
+                            <label >
                                 <h5><strong> Always</strong></h5>
                             </label>
 
@@ -117,9 +116,10 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="d-flex justify-content-center align-items-center q2 questCont" data-val = "Every Now And Then">
+                        <div class="d-flex justify-content-center align-items-center q2 questCont"
+                            data-val="Every Now And Then">
 
-                            <label style="height: 25px;">
+                            <label >
                                 <h5><strong> Every Now And Then</strong></h5>
                             </label>
 
@@ -127,9 +127,9 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="d-flex justify-content-center align-items-center q2 questCont" data-val = "Never">
+                        <div class="d-flex justify-content-center align-items-center q2 questCont" data-val="Never">
 
-                            <label style="height: 25px;">
+                            <label >
                                 <h5><strong> Never</strong></h5>
                             </label>
 
@@ -148,17 +148,17 @@
             <div id="q3" style="display: none;">
 
 
-
+                <div  class=" questHeader d-flex justify-content-center align-items-center">
                 <label class="text-uppercase">
                     <h3>3. How Many Times Have You Been HeartBroken</h3>
                 </label>
-
-                <div class='row' style="height:80vh;">
+                </div>
+                <div class='row questBody'>
 
                     <div class="col-md-3">
-                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val = "Never">
+                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="Never">
 
-                            <label style="height: 25px;">
+                            <label >
                                 <h5><strong> Never</strong></h5>
                             </label>
 
@@ -166,29 +166,30 @@
                     </div>
 
                     <div class="col-md-3">
-                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val = "0-3">
+                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="0-3">
 
-                            <label style="height: 25px;">
-                                <h5><strong>0 - 3</strong></h5>
+                            <label>
+                                <h5><strong>1 - 4</strong></h5>
                             </label>
 
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val = "4-6">
+                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="4-6">
 
-                            <label style="height: 25px;">
-                                <h5><strong> 4 - 6</strong></h5>
+                            <label>
+                                <h5><strong> 4 - 8</strong></h5>
                             </label>
 
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val = "Prefer Not To Say">
+                        <div class="d-flex justify-content-center align-items-center q3 questCont"
+                            data-val="Prefer Not To Say">
 
-                            <label style="height: 25px;">
+                            <label >
                                 <h5><strong>Prefer Not To Say</strong></h5>
                             </label>
 
@@ -202,18 +203,19 @@
 
 
             <div id="q4" style="display: none;">
-
+                <div  class=" questHeader d-flex justify-content-center align-items-center">
                 <label class="text-uppercase">
                     <h3>4. Choose your favourite out of these 3 movies</h3>
                 </label>
-
-                <div class='row' style="height:80vh;">
+                </div>
+                <div class='row questBody'>
 
 
                     <div class="col-md-4">
-                        <div class="q4 d-flex justify-content-center align-items-center questCont" data-val="intoTheWild">
+                        <div class="q4 d-flex justify-content-center align-items-center questCont"
+                            data-val="intoTheWild">
 
-                            <div class="col text-center" >
+                            <div class="col text-center">
                                 <img src="assets/img/220px-Into_the_Wild_(2007_film_poster).png" height="200" />
                             </div>
 
@@ -223,9 +225,10 @@
                     <div class="col-md-4 ">
 
 
-                        <div class="q4 d-flex justify-content-center align-items-center questCont" data-val="Thenotebook">
+                        <div class="q4 d-flex justify-content-center align-items-center questCont"
+                            data-val="Thenotebook">
 
-                            <div class="col text-center" >
+                            <div class="col text-center">
                                 <img src="assets/img/51J02DT6ULL.jpg" height="200" />
                             </div>
 
@@ -272,19 +275,17 @@
             },
             load: {
                 Question1: function () {
-                    $("#t").t($("#q1").html());
-                    $(".q1").click(function () {
-                        alert(this.text)
-                    });
+                    $("#t").html('');
+                    $("#questionsContainer").t($("#q1").html());
                 },
                 Question2: function () {
-                    $("#t").t($("#q2").html());
+                    $("#questionsContainer").t($("#q2").html());
                 },
                 Question3: function () {
-                    $("#t").t($("#q3").html());
+                    $("#questionsContainer").t($("#q3").html());
                 },
                 Question4: function () {
-                    $("#t").t($("#q4").html());
+                    $("#questionsContainer").t($("#q4").html());
                 }
             }
         };

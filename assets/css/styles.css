@@ -22,7 +22,18 @@
     vertical-align: middle;
     float: none;
 }
+
+
+/*  Questions  */
 .questCont{
-  height:40em;
+  height:40vh;
   border: 1px solid black;
+}
+.questHeader{
+  height: 30vh;
+}
+.questBody{
+
+  height: 80vh;
+
 }
