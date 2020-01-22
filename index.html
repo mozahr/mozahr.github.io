@@ -30,14 +30,12 @@
 
                             </div>
                             <div class="btnContinueSection1Part2" style="display: none;">
-                                <button class="btn btn-secondary" type="button"
-                                    onclick=" typeScript.load.intro(2);" >
-                                   Continue
+                                <button class="btn btn-secondary" type="button" onclick=" typeScript.load.intro(2);">
+                                    Continue
                                 </button>
                             </div>
                             <div class="btnStartQuizz" style="display: none;">
-                                <button class="btn btn-secondary" type="button"
-                                    onclick="typeScript.startQuiz()" >
+                                <button class="btn btn-secondary" type="button" onclick="typeScript.startQuiz()">
                                     Take the Quizz
                                 </button>
                             </div>
@@ -63,7 +61,7 @@
             <div id="q1" style="display: none;">
                 <div class=" questHeader d-flex justify-content-center align-items-center">
                     <label class="text-uppercase">
-                        <h3>How do you want to die</h3>
+                        <h3>How do you want to die ?</h3>
                     </label>
                 </div>
                 <div class='row questBody'>
@@ -157,7 +155,7 @@
 
                 <div class=" questHeader d-flex justify-content-center align-items-center">
                     <label class="text-uppercase">
-                        <h3>When do you want to die</h3>
+                        <h3>When do you want to die ?</h3>
                     </label>
                 </div>
                 <div class='row questBody'>
@@ -186,7 +184,7 @@
                         <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="3">
 
                             <label>
-                                <h5><strong>When every body else dies</strong></h5>
+                                <h5><strong>When everybody else dies</strong></h5>
                             </label>
 
                         </div>
@@ -194,7 +192,7 @@
 
                     <div class="col-md-12">
                         <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                            placeholder="Feel free to write your opinion">
+                            placeholder="Feel free to write your option">
                     </div>
                 </div>
 
@@ -297,7 +295,7 @@
 
                 <div class=" questHeader d-flex justify-content-center align-items-center">
                     <label class="text-uppercase">
-                        <h3>Where you want to go after you die ?</h3>
+                        <h3>Where do you want to go after you die ?</h3>
                     </label>
                 </div>
                 <div class='row questBody'>
@@ -306,7 +304,7 @@
                         <div class="d-flex justify-content-center align-items-center q6 questCont" data-val="1">
 
                             <label>
-                                <h5><strong>Back on earth</strong></h5>
+                                <h5><strong>Stay on earth</strong></h5>
                             </label>
 
                         </div>
@@ -348,19 +346,57 @@
         $('#section0').loading({ theme: 'dark' });
         setTimeout(function () {
             $('#section0').loading('stop');
+
             typeScript.load.intro(1);
         }, 5000);
+        window.speechSynthesis.onvoiceschanged = function () {
+            window.speechSynthesis.getVoices();
 
+        };
 
-        function ReadText(text) {
+        function ReadText(part) {
 
             var synth = window.speechSynthesis;
+            var voices = synth.getVoices();
 
-            var utterance1 = new SpeechSynthesisUtterance("Hello world. Let's wait two seconds");
-            var utterance2 = new SpeechSynthesisUtterance('Thanks for waiting. Now, We will start the Game, i mean the Quiz . Click continue to start');
+            if(part === 'part1'){
+            var utterance1 = new SpeechSynthesisUtterance('Hello human! My name is CYD and i was created to help you choose your death!');
+            var utterance2 = new SpeechSynthesisUtterance('Deaths can be hard, and sudden!');
+            var utterance3 = new SpeechSynthesisUtterance('but not anymore since we are making it easier for you by choosing your own!');
+            var utterance4 = new SpeechSynthesisUtterance('And Newly giving you the options of what you could turn into!');
+            var utterance5 = new SpeechSynthesisUtterance('As for me i will be here gladly guiding you throught this wonderful journey.');
+            utterance1.voice = voices[3];
+            utterance1.onend = function(event) {  setTimeout(function () {synth.speak(utterance2)}, 2500)}
+            utterance2.voice = voices[3];
+            utterance2.onend = function(event) {  setTimeout(function () {synth.speak(utterance3)}, 1500)}
+            utterance3.voice = voices[3];
+            utterance3.onend = function(event) {  setTimeout(function () {synth.speak(utterance4)}, 1000)}
+            utterance4.voice = voices[3];
+            utterance4.onend = function(event) {  setTimeout(function () {synth.speak(utterance5)}, 1000)}
+            utterance5.voice = voices[3];
+
             synth.cancel();
+           
             synth.speak(utterance1);
-            synth.speak(utterance2);
+    
+            }
+            else if(part === 'part2'){
+
+            var utterance1 = new SpeechSynthesisUtterance('But first, in order to make it the most confortable and fit death,');
+            var utterance2 = new SpeechSynthesisUtterance('you will have to proceed by answering a few questions to let us get to know you, and your tastes better.');
+
+
+            utterance1.voice = voices[3];
+            utterance1.onend = function(event) {  setTimeout(function () {synth.speak(utterance2)}, 1000)}
+            utterance2.voice = voices[3];
+
+   
+            synth.cancel();
+           
+           synth.speak(utterance1);
+
+            }
+            //synth.speak(utterance2);
 
             //synth.pause(); // pauses utterances being spoken
             //speechSynthesis.speak(new SpeechSynthesisUtterance("Hello, this is your browser speaking."));
@@ -381,38 +417,47 @@
         }
         var typeScript = {
             startQuiz: function () {
+
+                $('#section0').loading({ theme: 'dark' });
                 window.location.href = "#secondPage";
-                typeScript.load.Question1()
-     
+                setTimeout(function () {
+                    $('#section0').loading('stop');
+
+                    typeScript.load.Question1()
+
+                }, 5000);
+
+
             },
             load: {
                 intro: function (part) {
                     if (part === 1) {
+                        ReadText('part1');
                         $("#section1typing").t(' Hello human!<ins>1</ins><br> My name is CYD and i was created to help you choose your death !<ins>2</ins> <br>'
-                            + 'Deaths can be hard,<ins>1</ins> and sudden ' + String.fromCodePoint(0X1F641) + ' ! <ins>2</ins> <br> but not anymore since we are making it easier for you by choosing your own!<br> <ins>2</ins>And Newly giving you'
-                            + 'the options of what you could turn into! <ins>2</ins><br> '
+                            + 'Deaths can be hard,<ins>1</ins> and sudden ' + String.fromCodePoint(0X1F641) + ' ! <ins>2</ins> <br> but not anymore since we are making it easier for you by choosing your own! <br> <ins>2</ins>And Newly giving you'
+                            + ' the options of what you could turn into! <ins>2</ins><br> '
                             + 'As for me i will be here gladly guiding you throught this wonderful journey.',
                             {
-                                fin:function(){$(".btnContinueSection1Part2").fadeIn(1000)}
-                            } 
-                        ) 
-                                   
+                                fin: function () { $(".btnContinueSection1Part2").fadeIn(1000) }
+                            }
+                        )
+
 
 
                     } else if (part === 2) {
-                        $(".btnContinueSection1Part2").fadeOut(1000,function() {
-
+                        $(".btnContinueSection1Part2").fadeOut(1000, function () {
+                            ReadText('part2')
                             $("#section1typing").t('But first, in order to make it the most confortable and fit death, <ins>1</ins> <br>'
-                            + 'you will have to proceed by answering a few questions to let us get to know you, <ins>1</ins><br> and your tastes better.',{
+                                + 'you will have to proceed by answering a few questions to let us get to know you, <ins>1</ins><br> and your tastes better.', {
 
-                                fin:function(){$(".btnStartQuizz").fadeIn(1000)}
+                                fin: function () { $(".btnStartQuizz").fadeIn(1000) }
 
 
                             });
 
 
                         })
-                 
+
 
                     }
 
@@ -453,7 +498,7 @@
         };
 
 
-    
+
         $(document).ready(function () {
             // // set the hover events
             // var video = $("#previewVideo");
