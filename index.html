@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>sarah's Web</title>
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arbutus">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Beth+Ellen">
+    <!--link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arbutus">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Beth+Ellen">-->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/fullpage.css" />
@@ -20,51 +20,59 @@
     <div id="fullpage">
         <!-- section 1 -->
 
-        <div class="section s1" data-anchor="firstPage" id="section0"
-            style='background-image: url("assets/img/Mainbackground.jpg");background-repeat: no-repeat;background-size: cover;'>
+        <div class="section s1" data-anchor="firstPage" id="section0">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
-                            <h1 class="text-center silver" >Choose Your Death</h1>
-                            <button class="btn btn-secondary" type="button" onclick="typeScript.startQuiz()">
-                                Take the Quizz
-                            </button>
+                            <h1 class="text-center silver">Choose Your Death</h1>
+                            <div id="section1typing" style="margin: 15px;">
+
+                            </div>
+                            <div class="btnContinueSection1Part2" style="display: none;">
+                                <button class="btn btn-secondary" type="button"
+                                    onclick=" typeScript.load.intro(2);" >
+                                   Continue
+                                </button>
+                            </div>
+                            <div class="btnStartQuizz" style="display: none;">
+                                <button class="btn btn-secondary" type="button"
+                                    onclick="typeScript.startQuiz()" >
+                                    Take the Quizz
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- section 2 -->
+        <!-- ======================================== section 2 ================================================  -->
 
-        <div class="section s2 text-center" id="section1" data-anchor="secondPage" style='background-image: url("assets/img/Tv-Frame.jpg");background-repeat: no-repeat;background-size:cover;background-position: center;'  >
-            <div class="container" >
-                <div id="t" >
-                    Hello world. Let's wait <del>hundred</del> two seconds ..<ins>2</ins><br /><br /><strong>Thanks for waiting.</strong> Now, We will start the<del> Game </del>'Quiz' 1st question ...
+        <div class="section s2 text-center" id="section1" data-anchor="secondPage">
+            <div class="container">
+                <!-- <div id="t">               
                     <span onclick="typeScript.load.Question1()">continue</span>
-                </div>
+                </div> -->
                 <div id="questionsContainer"></div>
             </div>
 
-
-
-
-
+            <!-- ===================================================================================================  -->
+            <!-- =====================================Question 1===================================== -->
             <!-- Question To Be Loaded -->
             <div id="q1" style="display: none;">
                 <div class=" questHeader d-flex justify-content-center align-items-center">
                     <label class="text-uppercase">
-                        <h3>How do you usually spend your time</h3>
+                        <h3>How do you want to die</h3>
                     </label>
                 </div>
                 <div class='row questBody'>
 
                     <div class="col-md-4 ">
-                        <div class="q1 d-flex justify-content-center align-items-center questCont" data-val="Nature">
+                        <div class="q1 d-flex justify-content-center align-items-center questCont" data-val="1">
 
                             <label>
-                                <h5><strong>Nature</strong></h5>
+                                <h5><strong>Accidentaly shoot yourself in the head</strong></h5>
                             </label>
 
                         </div>
@@ -73,11 +81,10 @@
                     <div class="col-md-4 ">
 
 
-                        <div class="q1 d-flex justify-content-center align-items-center questCont"
-                            data-val="Playing Video Games">
+                        <div class="q1 d-flex justify-content-center align-items-center questCont" data-val="2">
 
                             <label>
-                                <h5><strong>Playing Video Games</strong></h5>
+                                <h5><strong>Get struck by lightning</strong></h5>
                             </label>
 
                         </div>
@@ -86,9 +93,9 @@
                     <div class="col-md-4">
 
 
-                        <div class="q1 d-flex justify-content-center align-items-center questCont" data-val="Reading">
+                        <div class="q1 d-flex justify-content-center align-items-center questCont" data-val="3">
                             <label>
-                                <h5><strong>Reading</strong></h5>
+                                <h5><strong>Eaten alive by a deer</strong></h5>
                             </label>
 
                         </div>
@@ -96,42 +103,41 @@
                 </div>
             </div>
 
-
+            <!-- =====================================Question 2===================================== -->
             <div id="q2" style="display: none;">
                 <div class=" questHeader d-flex justify-content-center align-items-center">
                     <label class="text-uppercase">
-                        <h3>How Often Do You Feel Lonely</h3>
+                        <h3>Where do yo want to die</h3>
                     </label>
                 </div>
 
                 <div class='row questBody'>
 
                     <div class="col-md-4">
-                        <div class="d-flex justify-content-center align-items-center q2 questCont" data-val="Always">
+                        <div class="d-flex justify-content-center align-items-center q2 questCont" data-val="1">
 
                             <label>
-                                <h5><strong>Always</strong></h5>
+                                <h5><strong>In your room</strong></h5>
                             </label>
 
                         </div>
                     </div>
 
                     <div class="col-md-4">
-                        <div class="d-flex justify-content-center align-items-center q2 questCont"
-                            data-val="Every Now And Then">
+                        <div class="d-flex justify-content-center align-items-center q2 questCont" data-val="2">
 
                             <label>
-                                <h5><strong> Every Now And Then</strong></h5>
+                                <h5><strong>In your car</strong></h5>
                             </label>
 
                         </div>
                     </div>
 
                     <div class="col-md-4">
-                        <div class="d-flex justify-content-center align-items-center q2 questCont" data-val="Never">
+                        <div class="d-flex justify-content-center align-items-center q2 questCont" data-val="3">
 
                             <label>
-                                <h5><strong> Never</strong></h5>
+                                <h5><strong>In the middle of nowhere</strong></h5>
                             </label>
 
                         </div>
@@ -144,122 +150,207 @@
 
             </div>
 
-
+            <!-- =====================================Question 3===================================== -->
 
             <div id="q3" style="display: none;">
 
 
                 <div class=" questHeader d-flex justify-content-center align-items-center">
                     <label class="text-uppercase">
-                        <h3>How Many Times Have You Been HeartBroken</h3>
+                        <h3>When do you want to die</h3>
                     </label>
                 </div>
                 <div class='row questBody'>
 
-                    <div class="col-md-3">
-                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="Never">
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="1">
 
                             <label>
-                                <h5><strong> Never</strong></h5>
+                                <h5><strong>Now</strong></h5>
                             </label>
 
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="0-3">
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="2">
 
                             <label>
-                                <h5><strong>1 - 4</strong></h5>
+                                <h5><strong>Tomorrow</strong></h5>
                             </label>
 
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="4-6">
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q3 questCont" data-val="3">
 
                             <label>
-                                <h5><strong> 4 - 8</strong></h5>
+                                <h5><strong>When every body else dies</strong></h5>
                             </label>
 
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="d-flex justify-content-center align-items-center q3 questCont"
-                            data-val="Prefer Not To Say">
-
-                            <label>
-                                <h5><strong>Prefer Not To Say</strong></h5>
-                            </label>
-
-                        </div>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                            placeholder="Feel free to write your opinion">
                     </div>
-
                 </div>
 
 
             </div>
 
+            <!-- =====================================Question 4===================================== -->
 
             <div id="q4" style="display: none;">
+
+
                 <div class=" questHeader d-flex justify-content-center align-items-center">
                     <label class="text-uppercase">
-                        <h3>Choose your favourite out of these 3 movies</h3>
+                        <h3>How would you like your coffin to be ?</h3>
                     </label>
                 </div>
                 <div class='row questBody'>
 
-
                     <div class="col-md-4">
-                        <div class="q4 d-flex justify-content-center align-items-center questCont"
-                            data-val="intoTheWild">
+                        <div class="d-flex justify-content-center align-items-center q4 questCont" data-val="1">
 
-                            <div class="col text-center">
-                                <img src="assets/img/220px-Into_the_Wild_(2007_film_poster).png" height="200" />
-                            </div>
+                            <label>
+                                <h5><strong>Biodegradable</strong></h5>
+                            </label>
 
                         </div>
                     </div>
 
-                    <div class="col-md-4 ">
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q4 questCont" data-val="2">
 
-
-                        <div class="q4 d-flex justify-content-center align-items-center questCont"
-                            data-val="Thenotebook">
-
-                            <div class="col text-center">
-                                <img src="assets/img/51J02DT6ULL.jpg" height="200" />
-                            </div>
+                            <label>
+                                <h5><strong>High Tech</strong></h5>
+                            </label>
 
                         </div>
-
                     </div>
+
                     <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q4 questCont" data-val="3">
 
-
-                        <div class="q4 d-flex justify-content-center align-items-center questCont" data-val="Matrix">
-
-                            <div class="col text-center">
-                                <img src="assets/img/download.jpg" height="200" />
-                            </div>
+                            <label>
+                                <h5><strong>Transposable</strong></h5>
+                            </label>
 
                         </div>
                     </div>
                 </div>
-
-
-
-
             </div>
+
+
+            <!-- =====================================Question 5===================================== -->
+
+            <div id="q5" style="display: none;">
+
+
+                <div class=" questHeader d-flex justify-content-center align-items-center">
+                    <label class="text-uppercase">
+                        <h3>What would you like to happen to your body after you die ?</h3>
+                    </label>
+                </div>
+                <div class='row questBody'>
+
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q5 questCont" data-val="1">
+
+                            <label>
+                                <h5><strong>Re-used on earth</strong></h5>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q5 questCont" data-val="2">
+
+                            <label>
+                                <h5><strong>Get retransformed</strong></h5>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q5 questCont" data-val="3">
+
+                            <label>
+                                <h5><strong>To disappear</strong></h5>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =====================================Question 6===================================== -->
+
+            <div id="q6" style="display: none;">
+
+
+                <div class=" questHeader d-flex justify-content-center align-items-center">
+                    <label class="text-uppercase">
+                        <h3>Where you want to go after you die ?</h3>
+                    </label>
+                </div>
+                <div class='row questBody'>
+
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q6 questCont" data-val="1">
+
+                            <label>
+                                <h5><strong>Back on earth</strong></h5>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q6 questCont" data-val="2">
+
+                            <label>
+                                <h5><strong>Cyberspace</strong></h5>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="d-flex justify-content-center align-items-center q6 questCont" data-val="3">
+
+                            <label>
+                                <h5><strong>To an other dimension</strong></h5>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 
     <script src="assets/js/t.min.js"></script>
     <script src="assets/js/fullpage.min.js"></script>
     <script src="assets/js/scrolloverflow.min.js"></script>
+    <script src="assets/js/loading.min.js"></script>
     <script>
+
+        //Initialize 
+        $('#section0').loading({ theme: 'dark' });
+        setTimeout(function () {
+            $('#section0').loading('stop');
+            typeScript.load.intro(1);
+        }, 5000);
+
 
         function ReadText(text) {
 
@@ -276,6 +367,7 @@
         }
 
 
+
         new fullpage("#fullpage", {
             autoScrolling: true,
             anchors: ["firstPage", "secondPage"],
@@ -283,24 +375,54 @@
         });
 
         var answers = [];
+
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
         var typeScript = {
             startQuiz: function () {
                 window.location.href = "#secondPage";
-                $("#t").t({
-                    beep: false
-                });
-                setTimeout(function (){ReadText("hello world")},1000);
-              
-
+                typeScript.load.Question1()
+     
             },
             load: {
-                Question1: function () {
-                    $("#t").html('');
-                    $("#questionsContainer").html($("#q1").html()).fadeIn(1000);
+                intro: function (part) {
+                    if (part === 1) {
+                        $("#section1typing").t(' Hello human!<ins>1</ins><br> My name is CYD and i was created to help you choose your death !<ins>2</ins> <br>'
+                            + 'Deaths can be hard,<ins>1</ins> and sudden ' + String.fromCodePoint(0X1F641) + ' ! <ins>2</ins> <br> but not anymore since we are making it easier for you by choosing your own!<br> <ins>2</ins>And Newly giving you'
+                            + 'the options of what you could turn into! <ins>2</ins><br> '
+                            + 'As for me i will be here gladly guiding you throught this wonderful journey.',
+                            {
+                                fin:function(){$(".btnContinueSection1Part2").fadeIn(1000)}
+                            } 
+                        ) 
+                                   
 
+
+                    } else if (part === 2) {
+                        $(".btnContinueSection1Part2").fadeOut(1000,function() {
+
+                            $("#section1typing").t('But first, in order to make it the most confortable and fit death, <ins>1</ins> <br>'
+                            + 'you will have to proceed by answering a few questions to let us get to know you, <ins>1</ins><br> and your tastes better.',{
+
+                                fin:function(){$(".btnStartQuizz").fadeIn(1000)}
+
+
+                            });
+
+
+                        })
+                 
+
+                    }
+
+
+
+
+
+                },
+                Question1: function () {
+                    $("#questionsContainer").html($("#q1").html()).fadeIn(1000);
                 },
                 Question2: function () {
                     $("#questionsContainer").fadeOut(1000, function () {
@@ -309,19 +431,29 @@
                 },
                 Question3: function () {
                     $("#questionsContainer").fadeOut(1000, function () {
-
                         $("#questionsContainer").html($("#q3").html()).fadeIn(1000);
                     });
-
                 },
                 Question4: function () {
                     $("#questionsContainer").fadeOut(1000, function () {
                         $("#questionsContainer").html($("#q4").html()).fadeIn(1000);
                     });
+                },
+                Question5: function () {
+                    $("#questionsContainer").fadeOut(1000, function () {
+                        $("#questionsContainer").html($("#q5").html()).fadeIn(1000);
+                    });
+                },
+                Question6: function () {
+                    $("#questionsContainer").fadeOut(1000, function () {
+                        $("#questionsContainer").html($("#q6").html()).fadeIn(1000);
+                    });
                 }
             }
         };
 
+
+    
         $(document).ready(function () {
             // // set the hover events
             // var video = $("#previewVideo");
@@ -372,25 +504,23 @@
                 typeScript.load.Question2();
             });
             $(document).on("click", ".q2", function () {
-
                 answers[1] = $(this).attr("data-val")
                 typeScript.load.Question3();
-
             });
             $(document).on("click", ".q3", function () {
-
-
                 answers[2] = $(this).attr("data-val")
                 typeScript.load.Question4();
             });
             $(document).on("click", ".q4", function () {
-
-
-                alert($(this).attr("data-val"))
                 answers[3] = $(this).attr("data-val")
-                alert("Here are all your answers: " + answers)
-
-
+                typeScript.load.Question5();
+            });
+            $(document).on("click", ".q5", function () {
+                answers[4] = $(this).attr("data-val")
+                typeScript.load.Question6();
+            });
+            $(document).on("click", ".q6", function () {
+                answers[5] = $(this).attr("data-val")
             });
         });
     </script>
