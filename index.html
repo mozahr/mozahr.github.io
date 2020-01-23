@@ -423,11 +423,11 @@
 
                     $('.btnStartQuizz').fadeOut('1000', function () {
 
-                        $('#section0').loading({ theme: 'dark' });
+                        $('#section1').loading({ theme: 'dark' });
 
                         setTimeout(function () {
 
-                            $('#section0').loading('stop');
+                            $('#section1').loading('stop');
                             var audio = document.getElementById("QuestionMusic");
                             audio.loop = true;
                             audio.play();
@@ -578,6 +578,8 @@
                 typeScript.load.Question6();
             });
             $(document).on("click", ".q6", function () {
+                var audio = document.getElementById("QuestionMusic");
+                            audio.pause()
                 answers[5] = $(this).attr("data-val")
             });
         });
