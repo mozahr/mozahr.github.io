@@ -14,8 +14,8 @@ colors: silver
     transform: translate(-50%, -50%);
   } */
   body{
-    color: mediumslateblue;
-    background-color: lightyellow;
+
+
     font-family: 'VT323';
     font-style: normal;
     font-weight: 400;
@@ -26,7 +26,7 @@ colors: silver
   ins,del{text-decoration:none;}
 h1{
   font-size: 70px;
-  color:#0f0
+ 
 }
 h5{
   font-size: 30px;
