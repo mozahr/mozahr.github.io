@@ -22,14 +22,14 @@
         height="32" style="float: right;top: 0;right: 0;display: none;position: fixed;" class='soundVolume'
         title="Bootstrap">
     <div id="fullpage">
-        <!-- section 1 -->
+        <!-- ======================================== section 1 ================================================  -->
 
         <div class="section s1" data-anchor="firstPage" id="section0">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
-                            <h1 class="text-center silver">Choose Your Death</h1>
+                            <h1 class="text-center ">Choose Your Death</h1>
                             <div id="section1typing" style="margin: 15px;">
 
                             </div>
@@ -381,7 +381,7 @@
             if (part === 'part1') {
                 var utterance1 = new SpeechSynthesisUtterance('Hello human! My name is CYD and i was created to help you choose your death!');
                 var utterance2 = new SpeechSynthesisUtterance('Death can be hard, and sudden!');
-                var utterance3 = new SpeechSynthesisUtterance('but not anymore since we are making it more convenient for you by offering you the chance to choose your own!');
+                var utterance3 = new SpeechSynthesisUtterance('but not anymore since i am making it more convenient for you by offering you the chance to choose your own!');
                 var utterance4 = new SpeechSynthesisUtterance('And giving you the options of what you could turn into!');
                 var utterance5 = new SpeechSynthesisUtterance('As for me i will be here gladly guiding you through this wonderful journey.');
                 utterance1.voice = voices[0];
@@ -402,7 +402,7 @@
             else if (part === 'part2') {
 
                 var utterance1 = new SpeechSynthesisUtterance('But first, in order to make it the more comfortable and fit death,');
-                var utterance2 = new SpeechSynthesisUtterance('you will have to proceed by answering a few questions to let us get to know you, and your tastes better.');
+                var utterance2 = new SpeechSynthesisUtterance('you will have to proceed by answering a few questions to let me get to know you, and your tastes better.');
 
 
                 utterance1.voice = voices[0];
@@ -464,10 +464,11 @@
                     if (part === 1) {
                         ReadText('part1');
                         $("#section1typing").t(' Hello human!<ins>1</ins><br> My name is CYD and i was created to help you choose your death !<ins>2</ins> <br>'
-                            + 'Death can be hard,<ins>1</ins> and sudden ' + String.fromCodePoint(0X1F641) + ' ! <ins>2</ins> <br> But not anymore since we are making it more convenient for you by offering you the chance to choose your own! <br> <ins>2</ins>And giving you'
+                            + 'Death can be hard,<ins>1</ins> and sudden ' + String.fromCodePoint(0X1F641) + ' ! <ins>2</ins> <br> But not anymore since i am making it more convenient for you by offering you the chance to choose your own! <br> <ins>2</ins>And giving you'
                             + ' the options of what you could turn into! <ins>2</ins><br> '
                             + 'As for me i will be here gladly guiding you through this wonderful journey.',
                             {
+                               
                                 fin: function () { $(".btnContinueSection1Part2").fadeIn(1000) }
                             }
                         )
@@ -481,7 +482,7 @@
 
                             ReadText('part2')
                             $("#section2typing").t('But first, in order to make it a more comfortable and fit death, <ins>1</ins> <br>'
-                                + 'you will have to proceed by answering a few questions to let us get to know you, <ins>1</ins><br> and your tastes better.', {
+                                + 'you will have to proceed by answering a few questions to let me get to know you, <ins>1</ins><br> and your tastes better.', {
 
                                 fin: function () { $(".btnStartQuizz").fadeIn(1000) }
 
