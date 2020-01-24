@@ -11,14 +11,16 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/fullpage.css" />
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" />
 </head>
 
 <body>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <audio src="/assets/audio/Elevator Music.mp3" hidden id="QuestionMusic" type="audio/mpeg"></audio>
-    <img src="/assets/node_modules/bootstrap-icons/icons/volume-up-fill.svg" onclick="toggleVolume()" alt="" width="32" height="32" style="float: right;top: 0;right: 0;display: none;position: fixed;" class='soundVolume' title="Bootstrap" >
+    <img src="/assets/node_modules/bootstrap-icons/icons/volume-up-fill.svg" onclick="toggleVolume()" alt="" width="32"
+        height="32" style="float: right;top: 0;right: 0;display: none;position: fixed;" class='soundVolume'
+        title="Bootstrap">
     <div id="fullpage">
         <!-- section 1 -->
 
@@ -30,6 +32,11 @@
                             <h1 class="text-center silver">Choose Your Death</h1>
                             <div id="section1typing" style="margin: 15px;">
 
+                            </div>
+                            <div class="btnStartIntro">
+                                <button class="btn btn-secondary" type="button" onclick="startIntro()">
+                                    Start
+                                </button>
                             </div>
                             <div class="btnContinueSection1Part2" style="display: none;">
                                 <button class="btn btn-secondary" type="button" onclick=" typeScript.load.intro(2);">
@@ -55,7 +62,7 @@
                         Take the Quizz
                     </button>
                 </div>
-              
+
                 <div id="questionsContainer"></div>
             </div>
 
@@ -347,12 +354,19 @@
     <script>
 
         //Initialize 
-        $('#section0').loading({ theme: 'dark' });
-        setTimeout(function () {
-            $('#section0').loading('stop');
+        function startIntro() {
+            $(".btnStartIntro").fadeOut(2000, function () {
 
-            typeScript.load.intro(1);
-        }, 5000);
+                $('#section0').loading({ theme: 'dark' });
+                setTimeout(function () {
+                    $('#section0').loading('stop');
+
+                    typeScript.load.intro(1);
+                }, 5000);
+
+            })
+
+        }
 
         // window.speechSynthesis.onvoiceschanged = function () {
         //     window.speechSynthesis.getVoices();
@@ -414,7 +428,7 @@
             anchors: ["firstPage", "secondPage"],
             scrollOverflow: true
         });
-      
+
         var answers = [];
 
         function sleep(ms) {
@@ -436,14 +450,14 @@
                             audio.loop = true;
                             audio.play();
                             $('.soundVolume').fadeIn(1000);
-                           
+
                             typeScript.load.Question1()
 
                         }, 5000);
 
                     })
                 })
-   
+
             },
             load: {
                 intro: function (part) {
@@ -516,18 +530,18 @@
             }
         };
 
-// function toggleVolume(){
+        // function toggleVolume(){
 
-//     $('.soundVolume').click(function(){
-//                               alert(this);
-//                              this.attr('src','/assets/node_modules/bootstrap-icons/icons/volume-down.svg');
-//                             });
+        //     $('.soundVolume').click(function(){
+        //                               alert(this);
+        //                              this.attr('src','/assets/node_modules/bootstrap-icons/icons/volume-down.svg');
+        //                             });
 
-// }
+        // }
 
         $(document).ready(function () {
-//set soundMute event
-         
+            //set soundMute event
+
 
             // // set the hover events
             // var video = $("#previewVideo");
@@ -595,8 +609,9 @@
             });
             $(document).on("click", ".q6", function () {
                 var audio = document.getElementById("QuestionMusic");
-                            audio.pause()
+                audio.pause()
                 answers[5] = $(this).attr("data-val")
+                $('#section2').loading({ theme: 'dark', text: "Finding your perfect machine..." });
             });
         });
     </script>
