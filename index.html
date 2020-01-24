@@ -71,7 +71,7 @@
                         <div class="q1 d-flex justify-content-center align-items-center questCont" data-val="1">
 
                             <label>
-                                <h5><strong>Accidentaly shoot yourself in the head</strong></h5>
+                                <h5><strong>Accidentally shoot yourself in the head</strong></h5>
                             </label>
 
                         </div>
@@ -106,7 +106,7 @@
             <div id="q2" style="display: none;">
                 <div class=" questHeader d-flex justify-content-center align-items-center">
                     <label class="text-uppercase">
-                        <h3>Where do yo want to die</h3>
+                        <h3>Where do you want to die</h3>
                     </label>
                 </div>
 
@@ -325,7 +325,7 @@
                         <div class="d-flex justify-content-center align-items-center q6 questCont" data-val="3">
 
                             <label>
-                                <h5><strong>To an other dimension</strong></h5>
+                                <h5><strong>To another dimension</strong></h5>
                             </label>
 
                         </div>
@@ -362,19 +362,19 @@
 
             if (part === 'part1') {
                 var utterance1 = new SpeechSynthesisUtterance('Hello human! My name is CYD and i was created to help you choose your death!');
-                var utterance2 = new SpeechSynthesisUtterance('Deaths can be hard, and sudden!');
-                var utterance3 = new SpeechSynthesisUtterance('but not anymore since we are making it easier for you by choosing your own!');
-                var utterance4 = new SpeechSynthesisUtterance('And Newly giving you the options of what you could turn into!');
-                var utterance5 = new SpeechSynthesisUtterance('As for me i will be here gladly guiding you throught this wonderful journey.');
-                utterance1.voice = voices[5];
+                var utterance2 = new SpeechSynthesisUtterance('Death can be hard, and sudden!');
+                var utterance3 = new SpeechSynthesisUtterance('but not anymore since we are making it more convenient for you by offering you the chance to choose your own!');
+                var utterance4 = new SpeechSynthesisUtterance('And giving you the options of what you could turn into!');
+                var utterance5 = new SpeechSynthesisUtterance('As for me i will be here gladly guiding you through this wonderful journey.');
+                utterance1.voice = voices[0];
                 utterance1.onend = function (event) { setTimeout(function () { synth.speak(utterance2) }, 2500) }
-                utterance2.voice = voices[5];
+                utterance2.voice = voices[0];
                 utterance2.onend = function (event) { setTimeout(function () { synth.speak(utterance3) }, 1500) }
-                utterance3.voice = voices[5];
+                utterance3.voice = voices[0];
                 utterance3.onend = function (event) { setTimeout(function () { synth.speak(utterance4) }, 1000) }
-                utterance4.voice = voices[5];
+                utterance4.voice = voices[0];
                 utterance4.onend = function (event) { setTimeout(function () { synth.speak(utterance5) }, 1000) }
-                utterance5.voice = voices[5];
+                utterance5.voice = voices[0];
 
                 synth.cancel();
 
@@ -383,13 +383,13 @@
             }
             else if (part === 'part2') {
 
-                var utterance1 = new SpeechSynthesisUtterance('But first, in order to make it the most confortable and fit death,');
+                var utterance1 = new SpeechSynthesisUtterance('But first, in order to make it the more comfortable and fit death,');
                 var utterance2 = new SpeechSynthesisUtterance('you will have to proceed by answering a few questions to let us get to know you, and your tastes better.');
 
 
-                utterance1.voice = voices[5];
+                utterance1.voice = voices[0];
                 utterance1.onend = function (event) { setTimeout(function () { synth.speak(utterance2) }, 1000) }
-                utterance2.voice = voices[5];
+                utterance2.voice = voices[0];
 
 
                 synth.cancel();
@@ -444,9 +444,9 @@
                     if (part === 1) {
                         ReadText('part1');
                         $("#section1typing").t(' Hello human!<ins>1</ins><br> My name is CYD and i was created to help you choose your death !<ins>2</ins> <br>'
-                            + 'Deaths can be hard,<ins>1</ins> and sudden ' + String.fromCodePoint(0X1F641) + ' ! <ins>2</ins> <br> but not anymore since we are making it easier for you by choosing your own! <br> <ins>2</ins>And Newly giving you'
+                            + 'Death can be hard,<ins>1</ins> and sudden ' + String.fromCodePoint(0X1F641) + ' ! <ins>2</ins> <br> but not anymore since we are making it more convenient for you by offering you the chance to choose your own! <br> <ins>2</ins>And giving you'
                             + ' the options of what you could turn into! <ins>2</ins><br> '
-                            + 'As for me i will be here gladly guiding you throught this wonderful journey.',
+                            + 'As for me i will be here gladly guiding you through this wonderful journey.',
                             {
                                 fin: function () { $(".btnContinueSection1Part2").fadeIn(1000) }
                             }
@@ -460,7 +460,7 @@
                             window.location.href = "#secondPage";
 
                             ReadText('part2')
-                            $("#section2typing").t('But first, in order to make it the most confortable and fit death, <ins>1</ins> <br>'
+                            $("#section2typing").t('But first, in order to make it a more comfortable and fit death, <ins>1</ins> <br>'
                                 + 'you will have to proceed by answering a few questions to let us get to know you, <ins>1</ins><br> and your tastes better.', {
 
                                 fin: function () { $(".btnStartQuizz").fadeIn(1000) }
