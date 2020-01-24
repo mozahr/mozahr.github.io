@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/fullpage.css" />
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"/>
 </head>
 
 <body>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <audio src="/assets/audio/Elevator Music.mp3" hidden id="QuestionMusic" type="audio/mpeg"></audio>
+    <img src="/assets/node_modules/bootstrap-icons/icons/volume-up-fill.svg" onclick="toggleVolume()" alt="" width="32" height="32" style="float: right;top: 0;right: 0;display: none;position: fixed;" class='soundVolume' title="Bootstrap" >
     <div id="fullpage">
         <!-- section 1 -->
 
@@ -53,6 +55,7 @@
                         Take the Quizz
                     </button>
                 </div>
+              
                 <div id="questionsContainer"></div>
             </div>
 
@@ -350,7 +353,7 @@
 
             typeScript.load.intro(1);
         }, 5000);
-        
+
         // window.speechSynthesis.onvoiceschanged = function () {
         //     window.speechSynthesis.getVoices();
 
@@ -411,7 +414,7 @@
             anchors: ["firstPage", "secondPage"],
             scrollOverflow: true
         });
-
+      
         var answers = [];
 
         function sleep(ms) {
@@ -432,6 +435,8 @@
                             var audio = document.getElementById("QuestionMusic");
                             audio.loop = true;
                             audio.play();
+                            $('.soundVolume').fadeIn(1000);
+                           
                             typeScript.load.Question1()
 
                         }, 5000);
@@ -511,9 +516,19 @@
             }
         };
 
+// function toggleVolume(){
 
+//     $('.soundVolume').click(function(){
+//                               alert(this);
+//                              this.attr('src','/assets/node_modules/bootstrap-icons/icons/volume-down.svg');
+//                             });
+
+// }
 
         $(document).ready(function () {
+//set soundMute event
+         
+
             // // set the hover events
             // var video = $("#previewVideo");
             // $(document).on({
