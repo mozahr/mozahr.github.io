@@ -39,7 +39,7 @@ height: 250px;
   border: black solid;
 }
 .ekko-lightbox-nav-overlay {
-background-color: white;
+
 border: black solid;
 margin: auto;
 text-align: center;
@@ -69,7 +69,11 @@ h5{
     float: none;
 }
 
+.audioMachine{
 
+  float: right;
+  right: 0;
+}
 /*  Questions  */
 .questCont{
   height:40vh;
