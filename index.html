@@ -79,13 +79,13 @@
                         <a href="/assets/img/machine1/catalog1.mp4">
 
                             <video src="/assets/img/machine1/catalog1.mp4" autoplay class="img-fluid rounded imgGallery"
-                                style="height: 350px;">
+                                style="height: 350px;" id="video1Machine1">
                         </a>
                         <a href="/assets/img/machine1/modeling details.mp4">
                             <video src="/assets/img/machine1/modeling details.mp4" autoplay
-                                class="img-fluid rounded imgGallery" style="height: 350px;">
+                                class="img-fluid rounded imgGallery" style="height: 350px;" id="video2Machine1">
                         </a>
-
+                        <button class="btn btn-default float-left" onclick="playPauseMachineAudio(1)">videos</button>
                         <button class="btn btn-default float-left" onclick="playPauseCYD(1)">talk</button>
                     </div>
                     <div class="col-md-8" style="overflow: visible;">
@@ -796,7 +796,25 @@
 
         function playPauseMachineAudio(machine) {
             var video;
-            if(machine === 2)
+            if(machine === 1){
+
+                myVideo1 = document.getElementById("video2Machine1");
+                myVideo2 = document.getElementById("video1Machine1");
+
+                if (myVideo1.paused){
+
+                    myVideo1.play();
+                    myVideo2.play();
+                }          
+            else{
+                myVideo1.pause();
+                myVideo2.pause();
+            }
+       
+            }
+            else{
+
+                if(machine === 2)
             {
                 myVideo = document.getElementById("audioMachine2");
             }
@@ -808,6 +826,10 @@
                 myVideo.play();
             else
                 myVideo.pause();
+
+
+            }
+           
         }
         function playPauseCYD(machine) {
 
