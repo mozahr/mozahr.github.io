@@ -2,7 +2,7 @@
 colors: silver
 
 */
-  /* #previewVideo { 
+/* #previewVideo { 
     position: fixed;
     top: 150%;
     left: 50%;
@@ -13,75 +13,76 @@ colors: silver
     z-index: -100;
     transform: translate(-50%, -50%);
   } */
-  body{
-
-
-    font-family: 'VT323';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    src: local('VT323 Regular'), local('VT323-Regular'), url(https://fonts.gstatic.com/s/vt323/v11/pxiKyp0ihIEF2isfFJU.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  ins,del{text-decoration:none;}
-h1{
+body {
+  font-family: "VT323";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  src: local("VT323 Regular"), local("VT323-Regular"),
+    url(https://fonts.gstatic.com/s/vt323/v11/pxiKyp0ihIEF2isfFJU.woff2)
+      format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+ins,
+del {
+  text-decoration: none;
+}
+h1 {
   font-size: 70px;
- 
 }
-.imgGallery{
-margin: 15px;
-height: 300px;
-
-
+.imgGallery {
+  margin: 15px;
+  height: 300px;
 }
-.modal-content{
 
+.imgGallery2 {
+  margin: 15px;
+  height: 300px;
+}
+.imgGallery3 {
+  margin: 15px;
+  height: 275px;
+}
+.modal-content {
   border: black solid;
 }
 .ekko-lightbox-nav-overlay {
-
-border: black solid;
+  border: black solid;
 }
 .ekko-lightbox-nav-overlay a {
-color:black;
-text-decoration: none;
-
-  
+  color: black;
+  text-decoration: none;
 }
-h5{
+h5 {
   font-size: 30px;
 }
-  .silver{
-
-    color: silver;
-  }
-   #previewVideo { 
-    position:cover;
-
-
-  } 
-
-  .vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
+.silver {
+  color: silver;
+}
+#previewVideo {
+  position: cover;
 }
 
-.audioMachine{
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
 
+.audioMachine {
   float: right;
   right: 0;
 }
 /*  Questions  */
-.questCont{
-  height:40vh;
+.questCont {
+  height: 40vh;
   border: 1px solid black;
 }
-.questHeader{
+.questHeader {
   height: 30vh;
 }
-.questBody{
-
+.questBody {
   height: 80vh;
-
 }
