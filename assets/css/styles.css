@@ -41,8 +41,6 @@ height: 250px;
 .ekko-lightbox-nav-overlay {
 
 border: black solid;
-margin: auto;
-text-align: center;
 }
 .ekko-lightbox-nav-overlay a {
 color:black;
