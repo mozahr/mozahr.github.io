@@ -28,6 +28,28 @@ h1{
   font-size: 70px;
  
 }
+.imgGallery{
+margin: 15px;
+height: 250px;
+
+
+}
+.modal-content{
+
+  border: black solid;
+}
+.ekko-lightbox-nav-overlay {
+background-color: white;
+border: black solid;
+margin: auto;
+text-align: center;
+}
+.ekko-lightbox-nav-overlay a {
+color:black;
+text-decoration: none;
+
+  
+}
 h5{
   font-size: 30px;
 }
