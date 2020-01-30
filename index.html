@@ -25,11 +25,12 @@
     <div id="fullpage">
         <!-- ======================================== section 1 ================================================  -->
 
-        <div class="section s1" data-anchor="firstPage" id="section1">
+        <div class="section s1 " data-anchor="firstPage" id="section1">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
+
                             <h1 class="text-center silver " id="Apptitle">Choose Your Death</h1>
                             <div id="section1typing" style="margin: 15px;">
 
@@ -51,10 +52,11 @@
                                     Take the Quizz
                                 </button>
                             </div>
-                            <button class="btn btn-secondary btnRetakeQuiz" style="display: none;" type="button" onclick="typeScript.startQuiz(2)">
+                            <button class="btn btn-secondary btnRetakeQuiz" style="display: none;" type="button"
+                                onclick="typeScript.startQuiz(2)">
                                 ReTake the Quizz
                             </button>
-            
+
                             <div id="questionsContainer"></div>
 
                         </div>
@@ -67,7 +69,10 @@
 
         <audio src="assets/audio/machine1.mp3" id="audioMachine1" class="audioMachine"></audio>
         <div class="section s2 " id="section2" data-anchor="secondPage">
-            <div id="machineMainContainer"></div>
+
+            <div id="machineMainContainer" class="fp-bg">
+
+            </div>
         </div>
 
 
@@ -632,7 +637,7 @@
 
 
     <script src="assets/js/t.min.js"></script>
-    <script src="assets/js/fullpage.min.js"></script>
+    <script src="assets/js/fullpage.extensions.min.js"></script>
     <script src="assets/js/scrolloverflow.min.js"></script>
     <script src="assets/js/loading.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
@@ -661,10 +666,10 @@
         //     window.speechSynthesis.getVoices();
 
         // };
-   
+
         function ReadMachine(machineNumber) {
 
-  
+
             if (machineNumber === 1) {
 
                 var utterance1 = new SpeechSynthesisUtterance('You seem like an earthy person, u like nature, well BIO D offers you the best option of keep u close to earth!');
@@ -759,10 +764,11 @@
         var fullpage = new fullpage("#fullpage", {
             autoScrolling: true,
             anchors: ["firstPage", "secondPage"],
-            scrollOverflow: true
+            scrollOverflow: true,
+            parallax: true
         });
 
-       
+
 
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
@@ -794,15 +800,21 @@
                     })
                 }
                 else {
-                    $('#Apptitle').fadeOut('1000')
-                    pauseMachineAudio(parseInt(answer));
-                    synth.pause();
-                    window.location.href = "#secondPage";
-                    var audio = document.getElementById("QuestionMusic");
-                    audio.loop = true;
-                    audio.play();
-                    $('.soundVolume').fadeIn(1000);
-                    typeScript.load.Question1();
+                    $('#Apptitle').fadeOut('1000', function () {
+                        $('.btnRetakeQuiz').fadeOut('1000', function () {
+                            $('.btnRetakeQuiz').fadeOut('1000');
+                            pauseMachineAudio(parseInt(answer));
+                            synth.pause();
+
+                            var audio = document.getElementById("QuestionMusic");
+                            audio.loop = true;
+                            audio.play();
+                            $('.soundVolume').fadeIn(1000);
+                            typeScript.load.Question1();
+
+                        })
+                    });
+
                 }
             },
             load: {
@@ -902,7 +914,7 @@
                 }
             }
         }
-        function pauseMachineAudio(machine){
+        function pauseMachineAudio(machine) {
 
             var video;
             if (machine === 1) {
@@ -914,8 +926,8 @@
             }
             else {
                 myVideo = document.getElementById("audioMachine3");
-            }        
-                myVideo.pause();
+            }
+            myVideo.pause();
 
         }
         function playPauseMachineAudio(machine) {
@@ -995,23 +1007,23 @@
 
             // set the click events
             $(document).on("click", ".q1", function () {
-            
+
                 typeScript.load.Question2();
             });
             $(document).on("click", ".q2", function () {
-              
+
                 typeScript.load.Question3();
             });
             $(document).on("click", ".q3", function () {
-            
+
                 typeScript.load.Question4();
             });
             $(document).on("click", ".q4", function () {
-             
+
                 typeScript.load.Question5();
             });
             $(document).on("click", ".q5", function () {
-            
+
                 typeScript.load.Question6();
             });
             $(document).on("click", ".q6", function () {
@@ -1022,7 +1034,7 @@
                 $('#section1').loading({ theme: 'dark', message: "Finding your perfect machine..." });
                 setTimeout(function () {
                     $('#section1').loading('stop');
-               
+
 
                     if (answer === '1') {
 
@@ -1031,8 +1043,8 @@
 
 
                         window.location.href = "#secondPage";
-                     
-                     
+
+
                         setTimeout(function () {
                             fullpage_api.reBuild();
                         }, 500);

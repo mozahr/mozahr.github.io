@@ -86,3 +86,8 @@ h5 {
 .questBody {
   height: 80vh;
 }
+#section2 .fp-bg{
+  background-image: url('../img/machine1/firstPictInBand.jpeg');
+  background-size: cover;
+  background-position: center 80%;
+}
