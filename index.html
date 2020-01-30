@@ -25,15 +25,17 @@
     <div id="fullpage">
         <!-- ======================================== section 1 ================================================  -->
 
-        <div class="section s1" data-anchor="firstPage" id="section0">
+        <div class="section s1" data-anchor="firstPage" id="section1">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
-                            <h1 class="text-center silver">Choose Your Death</h1>
+                            <h1 class="text-center silver " id="Apptitle">Choose Your Death</h1>
                             <div id="section1typing" style="margin: 15px;">
 
                             </div>
+
+
                             <div class="btnStartIntro">
                                 <button class="btn btn-secondary" type="button" onclick="startIntro()">
                                     Start
@@ -44,6 +46,16 @@
                                     Continue
                                 </button>
                             </div>
+                            <div class="btnStartQuizz" style="display: none;">
+                                <button class="btn btn-secondary" type="button" onclick="typeScript.startQuiz(1)">
+                                    Take the Quizz
+                                </button>
+                            </div>
+                            <button class="btn btn-secondary btnRetakeQuiz" style="display: none;" type="button" onclick="typeScript.startQuiz(2)">
+                                ReTake the Quizz
+                            </button>
+            
+                            <div id="questionsContainer"></div>
 
                         </div>
                     </div>
@@ -53,35 +65,12 @@
 
         <!-- ======================================== section 2 ================================================  -->
 
-        <div class="section s2 text-center" id="section1" data-anchor="secondPage">
-            <div class="container">
-                <div id="section2typing" style="margin: 15px;">
-
-                </div>
-                <div class="btnStartQuizz" style="display: none;">
-                    <button class="btn btn-secondary" type="button" onclick="typeScript.startQuiz(1)">
-                        Take the Quizz
-                    </button>
-                </div>
-
-                <div id="questionsContainer"></div>
-            </div>
-        </div>
-
-        <!-- ======================================== section 3 ================================================  -->
-
         <audio src="assets/audio/machine1.mp3" id="audioMachine1" class="audioMachine"></audio>
-        <div class="section s3 " id="section2" data-anchor="thirdPage">
+        <div class="section s2 " id="section2" data-anchor="secondPage">
             <div id="machineMainContainer"></div>
         </div>
 
 
-
-        <div class="section s4 text-center" id="section3" data-anchor="fourthPage">
-            <button class="btn btn-secondary" type="button" onclick="typeScript.startQuiz(2)">
-                ReTake the Quizz
-            </button>
-        </div>
     </div>
 
 
@@ -657,9 +646,9 @@
         function startIntro() {
             $(".btnStartIntro").fadeOut(2000, function () {
 
-                $('#section0').loading({ theme: 'dark' });
+                $('#section1').loading({ theme: 'dark' });
                 setTimeout(function () {
-                    $('#section0').loading('stop');
+                    $('#section1').loading('stop');
 
                     typeScript.load.intro(1);
                 }, 5000);
@@ -769,11 +758,11 @@
 
         var fullpage = new fullpage("#fullpage", {
             autoScrolling: true,
-            anchors: ["firstPage", "secondPage", "thirdPage", "fourthPage"],
+            anchors: ["firstPage", "secondPage"],
             scrollOverflow: true
         });
 
-        var answers = [];
+       
 
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
@@ -783,10 +772,10 @@
             startQuiz: function (option) {
 
                 if (option === 1) {
-                    $('#section2typing').fadeOut('1000', function () {
+                    $('#section1typing').fadeOut('1000', function () {
 
                         $('.btnStartQuizz').fadeOut('1000', function () {
-
+                            $('#Apptitle').fadeOut('1000')
                             $('#section1').loading({ theme: 'dark' });
 
                             setTimeout(function () {
@@ -805,6 +794,7 @@
                     })
                 }
                 else {
+                    $('#Apptitle').fadeOut('1000')
                     pauseMachineAudio(parseInt(answer));
                     synth.pause();
                     window.location.href = "#secondPage";
@@ -834,10 +824,9 @@
                     } else if (part === 2) {
 
                         $(".btnContinueSection1Part2").fadeOut(1000, function () {
-                            window.location.href = "#secondPage";
 
                             ReadText('part2')
-                            $("#section2typing").t('But first, in order to make it a more comfortable and fit death, <ins>1</ins> <br>'
+                            $("#section1typing").t('But first, in order to make it a more comfortable and fit death, <ins>1</ins> <br>'
                                 + 'you will have to proceed by answering a few questions to let me get to know you, <ins>1</ins><br> and your tastes better.', {
 
                                 fin: function () { $(".btnStartQuizz").fadeIn(1000) }
@@ -1006,32 +995,34 @@
 
             // set the click events
             $(document).on("click", ".q1", function () {
-                answers[0] = $(this).attr("data-val")
+            
                 typeScript.load.Question2();
             });
             $(document).on("click", ".q2", function () {
-                answers[1] = $(this).attr("data-val")
+              
                 typeScript.load.Question3();
             });
             $(document).on("click", ".q3", function () {
-                answers[2] = $(this).attr("data-val")
+            
                 typeScript.load.Question4();
             });
             $(document).on("click", ".q4", function () {
-                answers[3] = $(this).attr("data-val")
+             
                 typeScript.load.Question5();
             });
             $(document).on("click", ".q5", function () {
-                answers[4] = $(this).attr("data-val")
+            
                 typeScript.load.Question6();
             });
             $(document).on("click", ".q6", function () {
+
                 var audio = document.getElementById("QuestionMusic");
                 audio.pause()
                 answer = $(this).attr("data-val")
                 $('#section1').loading({ theme: 'dark', message: "Finding your perfect machine..." });
                 setTimeout(function () {
                     $('#section1').loading('stop');
+               
 
                     if (answer === '1') {
 
@@ -1039,7 +1030,9 @@
                         $('#machineMainContainer').html($('#machine1Container').html()).fadeIn("slow");
 
 
-                        window.location.href = "#thirdPage";
+                        window.location.href = "#secondPage";
+                     
+                     
                         setTimeout(function () {
                             fullpage_api.reBuild();
                         }, 500);
@@ -1052,7 +1045,7 @@
 
 
                         $('#machineMainContainer').html($('#machine2Container').html()).fadeIn("slow");
-                        window.location.href = "#thirdPage";
+                        window.location.href = "#secondPage";
                         setTimeout(function () {
                             fullpage_api.reBuild();
                         }, 500);
@@ -1064,7 +1057,7 @@
 
 
                         $('#machineMainContainer').html($('#machine3Container').html()).fadeIn("slow");
-                        window.location.href = "#thirdPage";
+                        window.location.href = "#secondPage";
                         setTimeout(function () {
                             fullpage_api.reBuild();
                         }, 500);
@@ -1075,6 +1068,12 @@
                     else {
 
                     }
+
+                    //empty section 1 and display retake the quiz
+                    $('#questionsContainer').empty();
+                    $('#Apptitle').fadeIn('1000')
+                    $('.btnRetakeQuiz').show();
+
                 }, 5000);
 
 
