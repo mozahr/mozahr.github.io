@@ -1131,7 +1131,8 @@
                             fullpage_api.reBuild();
                         }, 500);
 
-
+                        $("#machine2Carousel").carousel("pause").removeData();
+                        $("#machine2Carousel").carousel(0);
                         playPauseMachineAudio(2)
                         playPauseCYD(2);
                     } else if (answer === '3') {
