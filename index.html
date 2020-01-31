@@ -18,8 +18,8 @@
 <body>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <audio src="/assets/audio/Elevator Music.mp3" hidden id="QuestionMusic" type="audio/mpeg"></audio>
-    <img src="/assets/node_modules/bootstrap-icons/icons/volume-up-fill.svg" onclick="toggleVolume()" alt="" width="32"
+    <audio src="assets/audio/Elevator Music.mp3" hidden id="QuestionMusic" type="audio/mpeg"></audio>
+    <img src="assets/node_modules/bootstrap-icons/icons/volume-up-fill.svg" onclick="toggleVolume()" alt="" width="32"
         height="32" style="float: right;top: 0;right: 0;display: none;position: fixed;" class='soundVolume'
         title="Bootstrap">
     <div id="fullpage">
@@ -384,13 +384,13 @@
             <div class="row align-items-center">
 
                 <div class="col-md-5">
-                    <a href="/assets/img/machine1/catalog1.mp4">
+                    <a href="assets/img/machine1/catalog1.mp4">
 
-                        <video src="/assets/img/machine1/catalog1.mp4" autoplay class="img-fluid rounded imgGallery"
+                        <video src="assets/img/machine1/catalog1.mp4" autoplay class="img-fluid rounded imgGallery"
                             style="height: 350px;" id="video1Machine1">
                     </a>
-                    <a href="/assets/img/machine1/modeling details.mp4">
-                        <video src="/assets/img/machine1/modeling details.mp4" autoplay
+                    <a href="assets/img/machine1/modeling details.mp4">
+                        <video src="assets/img/machine1/modeling details.mp4" autoplay
                             class="img-fluid rounded imgGallery " style="height: 350px;" id="video2Machine1">
                     </a>
 
@@ -402,60 +402,108 @@
                 </div>
 
             </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-
-                    <a href="assets/img/machine1/firstPictInBand.jpeg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="assets/img/machine1/firstPictInBand.jpeg" class="img-fluid rounded ">
-                    </a>
 
 
 
-                    <a href="assets/img/machine1/picture2.jpg" data-toggle="lightbox" data-gallery="gallery">
-                        <img src="/assets/img/machine1/picture2.jpg" class="img-fluid rounded ">
-                    </a>
 
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-12" style="overflow: visible;">
-                    <div>
-                        <a href="/assets/img/machine1/assembly-min.jpg" data-toggle="lightbox" data-gallery="gallery"
-                            class="col-md-4">
-                            <img src="/assets/img/machine1/assembly-min.jpg" class="img-fluid rounded imgGallery">
-                        </a>
-                        <a href="/assets/img/machine1/front view-min.jpg" data-toggle="lightbox" data-gallery="gallery"
-                            class="col-md-4">
-                            <img src="/assets/img/machine1/front view-min.jpg" class="img-fluid rounded imgGallery">
-                        </a>
-                        <a href="assets/img/machine1/perpsective-min.jpg" data-toggle="lightbox" data-gallery="gallery"
-                            class="col-md-4">
-                            <img src="assets/img/machine1/perpsective-min.jpg" class="img-fluid rounded imgGallery">
-                        </a>
-                        <a href="assets/img/machine1/perspective view-min.jpg" data-toggle="lightbox"
-                            data-gallery="gallery" class="col-md-4">
-                            <img src="assets/img/machine1/perspective view-min.jpg"
-                                class="img-fluid rounded imgGallery">
-                        </a>
-                        <a href="assets/img/machine1/plan view-min.jpg" data-toggle="lightbox" data-gallery="gallery"
-                            class="col-md-4">
-                            <img src="assets/img/machine1/plan view-min.jpg" class="img-fluid rounded imgGallery">
-                        </a>
-                        <a href="assets/img/machine1/Untitled-5-min.jpg" data-toggle="lightbox" data-gallery="gallery"
-                            class="col-md-4">
-                            <img src="assets/img/machine1/Untitled-5-min.jpg" class="img-fluid rounded imgGallery">
-                        </a>
-                        <a href="assets/img/machine1/Untitled-7-min.jpg" data-toggle="lightbox" data-gallery="gallery"
-                            class="col-md-4">
-                            <img src="assets/img/machine1/Untitled-7-min.jpg" class="img-fluid rounded imgGallery">
-                        </a>
-                        <a href="assets/img/machine1/Untitled-8-min.jpg" data-toggle="lightbox" data-gallery="gallery"
-                            class="col-md-4">
-                            <img src="assets/img/machine1/Untitled-8-min.jpg" class="img-fluid rounded imgGallery">
-                        </a>
+     
+
+            <div class="row justify-content-center">
+
+                <div id="machine1Carousel" class="carousel slide" data-ride="carousel">
+
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#machine1Carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#machine1Carousel" data-slide-to="1"></li>
+                        <li data-target="#machine1Carousel" data-slide-to="2"></li>
+                        <li data-target="#machine1Carousel" data-slide-to="3"></li>
+                        <li data-target="#machine1Carousel" data-slide-to="4"></li>
+                    </ul>
+
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+
+
+                        <div class="carousel-item active">
+
+                            <a href="assets/img/machine1/firstPictInBand.jpeg" data-toggle="lightbox" data-gallery="gallery" class="col-md-6">
+                                <img src="assets/img/machine1/firstPictInBand.jpeg" class="img-fluid rounded ">
+                            </a>
+        
+        
+        
+                            <a href="assets/img/machine1/picture2.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-6">
+                                <img src="assets/img/machine1/picture2.jpg" class="img-fluid rounded ">
+                            </a>
+        
+
+                        </div>
+
+                        <div class="carousel-item">
+
+                            <a href="assets/img/machine1/assembly-min.jpg" data-toggle="lightbox" data-gallery="gallery"
+                                class="col-md-6">
+                                <img src="assets/img/machine1/assembly-min.jpg" class="img-fluid rounded imgGallery">
+                            </a>
+                            <a href="assets/img/machine1/front view-min.jpg" data-toggle="lightbox"
+                                data-gallery="gallery" class="col-md-6">
+                                <img src="assets/img/machine1/front view-min.jpg" class="img-fluid rounded imgGallery">
+                            </a>
+
+                        </div>
+                        <div class="carousel-item">
+
+                            <a href="assets/img/machine1/perpsective-min.jpg" data-toggle="lightbox"
+                                data-gallery="gallery" class="col-md-6">
+                                <img src="assets/img/machine1/perpsective-min.jpg" class="img-fluid rounded imgGallery">
+                            </a>
+                            <a href="assets/img/machine1/perspective view-min.jpg" data-toggle="lightbox"
+                                data-gallery="gallery" class="col-md-6">
+                                <img src="assets/img/machine1/perspective view-min.jpg"
+                                    class="img-fluid rounded imgGallery">
+                            </a>
+
+                        </div>
+                        <div class="carousel-item">
+                            <a href="assets/img/machine1/plan view-min.jpg" data-toggle="lightbox"
+                                data-gallery="gallery" class="col-md-6">
+                                <img src="assets/img/machine1/plan view-min.jpg" class="img-fluid rounded imgGallery">
+                            </a>
+                            <a href="assets/img/machine1/Untitled-5-min.jpg" data-toggle="lightbox"
+                                data-gallery="gallery" class="col-md-6">
+                                <img src="assets/img/machine1/Untitled-5-min.jpg" class="img-fluid rounded imgGallery">
+                            </a>
+
+
+                        </div>
+                        <div class="carousel-item ">
+
+                            <a href="assets/img/machine1/Untitled-7-min.jpg" data-toggle="lightbox"
+                                data-gallery="gallery" class="col-md-6">
+                                <img src="assets/img/machine1/Untitled-7-min.jpg" class="img-fluid rounded imgGallery">
+                            </a>
+                            <a href="assets/img/machine1/Untitled-8-min.jpg" data-toggle="lightbox"
+                                data-gallery="gallery" class="col-md-6">
+                                <img src="assets/img/machine1/Untitled-8-min.jpg" class="img-fluid rounded imgGallery">
+                            </a>
+
+                        </div>
+
+
                     </div>
+
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#machine1Carousel" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#machine1Carousel" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
                 </div>
             </div>
+
 
         </div>
     </div>
@@ -496,12 +544,25 @@
                         <li data-target="#machine2Carousel" data-slide-to="2"></li>
                         <li data-target="#machine2Carousel" data-slide-to="3"></li>
                         <li data-target="#machine2Carousel" data-slide-to="4"></li>
+                        <li data-target="#machine2Carousel" data-slide-to="5"></li>
 
                     </ul>
 
                     <!-- The slideshow -->
                     <div class="carousel-inner">
+
                         <div class="carousel-item active">
+
+                            <a href="assets/img/machine2/Untitled-1.jpg" data-toggle="lightbox" data-gallery="gallery2"
+                                class="col-md-6">
+                                <img src="assets/img/machine2/Untitled-1.jpg" class="img-fluid rounded imgGallery">
+                            </a>
+                            <a href="assets/img/machine2/alt-1.gif" data-toggle="lightbox" data-gallery="gallery2"
+                                class="col-md-6">
+                                <img src="assets/img/machine2/alt-1.gif" class="img-fluid rounded imgGallery">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
 
                             <a href="assets/img/machine2/0-min.jpg" data-toggle="lightbox" data-gallery="gallery2"
                                 class="col-md-6">
@@ -516,6 +577,7 @@
 
 
                         </div>
+                   
                         <div class="carousel-item">
                             <a href="assets/img/machine2/2-min.jpg" data-toggle="lightbox" data-gallery="gallery2"
                                 class="col-md-6">
@@ -535,7 +597,7 @@
                             </a>
 
 
-                            <a href="/assets/img/machine2/0001-min.jpg" data-toggle="lightbox" data-gallery="gallery2"
+                            <a href="assets/img/machine2/0001-min.jpg" data-toggle="lightbox" data-gallery="gallery2"
                                 class="col-md-6">
                                 <img src="assets/img/machine2/0001-min.jpg" class="img-fluid rounded imgGallery">
                             </a>
@@ -555,36 +617,168 @@
                             </a>
 
                         </div>
+                   
                         <div class="carousel-item">
 
                             <a href="assets/img/machine2/plan viewww-min.jpg" data-toggle="lightbox"
                                 data-gallery="gallery2" class="col-md-6">
                                 <img src="assets/img/machine2/plan viewww-min.jpg" class="img-fluid rounded imgGallery">
                             </a>
+
+
                         </div>
+
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#machine2Carousel" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#machine2Carousel" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+
                     </div>
 
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#machine2Carousel" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#machine2Carousel" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 </div>
+            </div>
+
+        </div>
+        <!-- ======================================== machine 3 ================================================  -->
+        <audio src="assets/audio/machine3.mp3" id="audioMachine3" class="audioMachine"></audio>
+        <div id="machine3Container" style="display: none;">
+            <div class="container-fuild">
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div data-bs-parallax-bg="true"
+                            style="height:500px;background-image:url(assets/img/machine3/FIRST%20IMAGE%20IN%20THE%20SLIDE%20SHOW-min.jpg);background-position:center;background-size:cover;">
+                        </div>
+
+                        <button class="btn btn-default float-left" onclick="playPauseMachineAudio(3)">music</button>
+                        <button class="btn btn-default float-left" onclick="playPauseCYD(3)">talk</button>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <div class="col-md-4 text-center">
+                        <a href="assets/img/machine3/machine3.gif" data-toggle="lightbox" data-gallery="gallery3">
+                            <img src="assets/img/machine3/machine3.gif" class="img-fluid rounded imgGallery3">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center">
+
+                    <div id="machine3Carousel" class="carousel slide" data-ride="carousel">
+
+                        <!-- Indicators -->
+                        <ul class="carousel-indicators">
+                            <li data-target="#machine3Carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#machine3Carousel" data-slide-to="1"></li>
+                            <li data-target="#machine3Carousel" data-slide-to="2"></li>
+                            <li data-target="#machine3Carousel" data-slide-to="3"></li>
+                            <li data-target="#machine3Carousel" data-slide-to="4"></li>
+                        </ul>
+
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="assets/img/machine3/1-min.jpg" data-toggle="lightbox" data-gallery="gallery3"
+                                    class="col-md-6">
+                                    <img src="assets/img/machine3/1-min.jpg" class="img-fluid rounded imgGallery3">
+                                </a>
+                                <a href="assets/img/machine3/GHGHGSDD-min.jpg" data-toggle="lightbox"
+                                    data-gallery="gallery3" class="col-md-6">
+                                    <img src="assets/img/machine3/GHGHGSDD-min.jpg"
+                                        class="img-fluid rounded imgGallery">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+
+                                <a href="assets/img/machine3/JOJOJO-min.jpg" data-toggle="lightbox"
+                                    data-gallery="gallery3" class="col-md-6">
+                                    <img src="assets/img/machine3/JOJOJO-min.jpg" class="img-fluid rounded imgGallery3">
+                                </a>
+                                <a href="assets/img/machine3/popopopopop-min.jpg" data-toggle="lightbox"
+                                    data-gallery="gallery3" class="col-md-6">
+                                    <img src="assets/img/machine3/popopopopop-min.jpg"
+                                        class="img-fluid rounded imgGallery3">
+                                </a>
+
+
+                            </div>
+                            <div class="carousel-item">
+                                <a href="assets/img/machine3/jojojojojoj-min.jpg" data-toggle="lightbox"
+                                    data-gallery="gallery3" class="col-md-6">
+                                    <img src="assets/img/machine3/jojojojojoj-min.jpg"
+                                        class="img-fluid rounded imgGallery3"
+                                        style="border-right: black solid;border-left: black solid;">
+                                </a>
+
+                                <a href="assets/img/machine3/66666-min.jpg" data-toggle="lightbox"
+                                    data-gallery="gallery3" class="col-md-6">
+                                    <img src="assets/img/machine3/66666-min.jpg" class="img-fluid rounded imgGallery3"
+                                        style="border-top: black solid; border-bottom: black solid;">
+                                </a>
+                            </div>
+
+
+                            <div class="carousel-item">
+                                <a href="assets/img/machine3/6545-min.jpg" data-toggle="lightbox"
+                                    data-gallery="gallery3" class="col-md-6">
+                                    <img src="assets/img/machine3/6545-min.jpg" class="img-fluid rounded imgGallery3">
+                                </a>
+                                <a href="assets/img/machine3/ghghhhg-min.jpg" data-toggle="lightbox"
+                                    data-gallery="gallery3" class="col-md-6">
+                                    <img src="assets/img/machine3/ghghhhg-min.jpg"
+                                        class="img-fluid rounded imgGallery3 "
+                                        style="border-top: black solid; border-bottom: black solid;">
+                                </a>
+                            </div>
+
+                            <div class="carousel-item">
+
+
+                                <a href="assets/img/machine3/yuyu-min.jpg" data-toggle="lightbox"
+                                    data-gallery="gallery3" class="col-md-6">
+                                    <img src="assets/img/machine3/yuyu-min.jpg" class="img-fluid rounded imgGallery3"
+                                        style="border-right: black solid;border-left: black solid;">
+                                </a>
+                            </div>
+
+
+
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="carousel-control-prev" href="#machine3Carousel" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#machine3Carousel" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
 
 
 
 
-
-
-
-
-
-
-
-
+                </div>
 
 
 
@@ -593,136 +787,15 @@
         </div>
 
     </div>
-    <!-- ======================================== machine 3 ================================================  -->
-    <audio src="assets/audio/machine3.mp3" id="audioMachine3" class="audioMachine"></audio>
-    <div id="machine3Container" style="display: none;">
-        <div class="container-fuild">
-
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div data-bs-parallax-bg="true"
-                        style="height:500px;background-image:url(assets/img/machine3/FIRST%20IMAGE%20IN%20THE%20SLIDE%20SHOW-min.jpg);background-position:center;background-size:cover;">
-                    </div>
-
-                    <button class="btn btn-default float-left" onclick="playPauseMachineAudio(3)">music</button>
-                    <button class="btn btn-default float-left" onclick="playPauseCYD(3)">talk</button>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-            
-                <div class="col-md-4 text-center">
-                    <a href="assets/img/machine3/machine3.gif" data-toggle="lightbox" data-gallery="gallery3"
-                        >
-                        <img src="assets/img/machine3/machine3.gif" class="img-fluid rounded imgGallery3">
-                    </a>
-                </div>
-
-            </div>
-            <div class="row justify-content-center">
-
-                <div id="machine3Carousel" class="carousel slide" data-ride="carousel">
-
-                    <!-- Indicators -->
-                    <ul class="carousel-indicators">
-                        <li data-target="#machine3Carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#machine3Carousel" data-slide-to="1"></li>
-                        <li data-target="#machine3Carousel" data-slide-to="2"></li>
-                        <li data-target="#machine3Carousel" data-slide-to="3"></li>
-                        <li data-target="#machine3Carousel" data-slide-to="4"></li>
-                    </ul>
-
-                    <!-- The slideshow -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <a href="assets/img/machine3/1-min.jpg" data-toggle="lightbox" data-gallery="gallery3"
-                                class="col-md-6">
-                                <img src="assets/img/machine3/1-min.jpg" class="img-fluid rounded imgGallery3">
-                            </a>
-                            <a href="assets/img/machine3/GHGHGSDD-min.jpg" data-toggle="lightbox"
-                                data-gallery="gallery3" class="col-md-6">
-                                <img src="assets/img/machine3/GHGHGSDD-min.jpg" class="img-fluid rounded imgGallery">
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-
-                            <a href="assets/img/machine3/JOJOJO-min.jpg" data-toggle="lightbox" data-gallery="gallery3"
-                                class="col-md-6">
-                                <img src="assets/img/machine3/JOJOJO-min.jpg" class="img-fluid rounded imgGallery3">
-                            </a>
-                            <a href="assets/img/machine3/popopopopop-min.jpg" data-toggle="lightbox"
-                                data-gallery="gallery3" class="col-md-6">
-                                <img src="assets/img/machine3/popopopopop-min.jpg"
-                                    class="img-fluid rounded imgGallery3">
-                            </a>
-
-
-                        </div>
-                        <div class="carousel-item">
-                            <a href="assets/img/machine3/jojojojojoj-min.jpg" data-toggle="lightbox"
-                                data-gallery="gallery3" class="col-md-6">
-                                <img src="assets/img/machine3/jojojojojoj-min.jpg" class="img-fluid rounded imgGallery3"
-                                    style="border-right: black solid;border-left: black solid;">
-                            </a>
-
-                            <a href="assets/img/machine3/66666-min.jpg" data-toggle="lightbox" data-gallery="gallery3"
-                                class="col-md-6">
-                                <img src="assets/img/machine3/66666-min.jpg" class="img-fluid rounded imgGallery3"
-                                    style="border-top: black solid; border-bottom: black solid;">
-                            </a>
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <a href="assets/img/machine3/6545-min.jpg" data-toggle="lightbox" data-gallery="gallery3"
-                                class="col-md-6">
-                                <img src="assets/img/machine3/6545-min.jpg" class="img-fluid rounded imgGallery3">
-                            </a>
-                            <a href="assets/img/machine3/ghghhhg-min.jpg" data-toggle="lightbox" data-gallery="gallery3"
-                                class="col-md-6">
-                                <img src="assets/img/machine3/ghghhhg-min.jpg" class="img-fluid rounded imgGallery3 "
-                                    style="border-top: black solid; border-bottom: black solid;">
-                            </a>
-                        </div>
-
-                        <div class="carousel-item">
-
-
-                            <a href="assets/img/machine3/yuyu-min.jpg" data-toggle="lightbox" data-gallery="gallery3"
-                                class="col-md-6">
-                                <img src="assets/img/machine3/yuyu-min.jpg" class="img-fluid rounded imgGallery3"
-                                    style="border-right: black solid;border-left: black solid;">
-                            </a>
-                        </div>
-
-
-
-                    </div>
-
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#machine3Carousel" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#machine3Carousel" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
-
-
-
-
-            </div>
-
-
-
-
-        </div>
+    <div id="custom-loading"><span class="spinner-grow spinner-grow-sm" > 
+    </span>
+    Loading...
     </div>
-
-</div>
-
-
+    <div id="custom-loading2"><span class="spinner-grow spinner-grow-sm" > 
+    </span>
+    Finding your perfect machine...
+    </div>
+   
 
     <script src="assets/js/t.min.js"></script>
     <script src="assets/js/fullpage.extensions.min.js"></script>
@@ -739,7 +812,7 @@
         function startIntro() {
             $(".btnStartIntro").fadeOut(2000, function () {
 
-                $('#section1').loading({ theme: 'dark' });
+                $('#section1').loading({ theme: 'dark',  message: $("#custom-loading").html() });
                 setTimeout(function () {
                     $('#section1').loading('stop');
 
@@ -870,7 +943,7 @@
 
                         $('.btnStartQuizz').fadeOut('1000', function () {
                             $('#Apptitle').fadeOut('1000')
-                            $('#section1').loading({ theme: 'dark' });
+                            $('#section1').loading({ theme: 'dark',  message: $("#custom-loading").html() });
 
                             setTimeout(function () {
 
@@ -891,20 +964,20 @@
                     $('#Apptitle').fadeOut('1000', function () {
                         $('.btnRetakeQuiz').fadeOut('1000', function () {
                             $('.btnRetakeQuiz').fadeOut('1000');
-                            $('#section1').loading({ theme: 'dark' });
+                            $('#section1').loading({ theme: 'dark',message: $("#custom-Loading").html()  });
 
                             setTimeout(function () {
+                                $('#section1').loading('stop');
+                                pauseMachineAudio(parseInt(answer));
+                                synth.pause();
 
-                            pauseMachineAudio(parseInt(answer));
-                            synth.pause();
+                                var audio = document.getElementById("QuestionMusic");
+                                audio.loop = true;
+                                audio.play();
+                                $('.soundVolume').fadeIn(1000);
+                                typeScript.load.Question1();
 
-                            var audio = document.getElementById("QuestionMusic");
-                            audio.loop = true;
-                            audio.play();
-                            $('.soundVolume').fadeIn(1000);
-                            typeScript.load.Question1();
-
-                            },4000);
+                            }, 4000);
 
                         })
                     });
@@ -1125,7 +1198,7 @@
                 var audio = document.getElementById("QuestionMusic");
                 audio.pause()
                 answer = $(this).attr("data-val")
-                $('#section1').loading({ theme: 'dark', message: "Finding your perfect machine..." });
+                $('#section1').loading({ theme: 'dark', message: "Finding your perfect machine..."  ,  message: $("#custom-loading2").html()  });
                 setTimeout(function () {
                     $('#section1').loading('stop');
 
@@ -1169,7 +1242,7 @@
                             fullpage_api.reBuild();
                         }, 500);
 
-                        
+
                         $("#machine3Carousel").carousel("pause").removeData();
                         $("#machine3Carousel").carousel(0);
                         playPauseMachineAudio(3);
@@ -1189,7 +1262,9 @@
 
             });
         });
+
     </script>
+
 </body>
 
 </html>
